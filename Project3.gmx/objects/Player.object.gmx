@@ -3,7 +3,7 @@
   <spriteName>spr_player_idle</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-8</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>spr_player_mask</maskName>
@@ -27,14 +27,21 @@
             <kind>1</kind>
             <string>///Initialize the player instance
 
-spd = 4;
+spd = 8;
+acc = 2;
 
 hspd = 0;
 vspd = 0;
 
 grav = 1.5;
 
-state = 0;
+state = move_state;
+
+//Get the input
+get_input();
+
+//Create the audio emitter
+audio_em = audio_emitter_create();
 </string>
           </argument>
         </arguments>
@@ -58,8 +65,165 @@ state = 0;
           <argument>
             <kind>1</kind>
             <string>///Control the player's state
-move_state();
+get_input();
 
+script_execute(state);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="Boss">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Take damage from the boss
+
+take_damage();
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="EnemyParent">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Collide with an enemy
+
+var above_enemy = y &lt; other.y + vspd;
+var falling = vspd &gt; 0;
+
+if (above_enemy &amp;&amp; (falling || state = ledge_grab_state)) {
+    if (!place_meeting(x, yprevious, Solid)) {
+        y=yprevious;
+    }
+    
+    while (!place_meeting(x, y+1, other)) {
+        y++;
+    }
+
+    //Kill the enemy
+    with (other) {
+        instance_destroy();
+    }
+    
+    //Bounce off the enemy
+    vspd = -(16/1.5);
+    
+    //Play kill sound
+    audio_play_sound(snd_step,6,false);
+} else {
+    take_damage();
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="Lava">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Take damage from the lava
+
+take_damage();
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="Sapphire">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Collect the sapphire
+PlayerStats.sapphires += 1;
+with(other) instance_destroy();
+audio_play_sound(snd_tink,4,false);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="Exit">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Go to the next level
+if (up &amp;&amp; other.visible) {
+    y=yprevious;
+    state = exit_state;
+    audio_stop_sound(snd_jump);
+    audio_play_sound(snd_exit,4,false);
+}
 </string>
           </argument>
         </arguments>
