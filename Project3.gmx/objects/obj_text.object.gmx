@@ -29,6 +29,7 @@
 print = "";
 time = 0;
 depth = depth - instance_number(obj_text);
+done = true;
 </string>
           </argument>
         </arguments>
@@ -52,10 +53,15 @@ depth = depth - instance_number(obj_text);
           <argument>
             <kind>1</kind>
             <string>///Add letters over time
+done = false;
 if(time &lt; text_length)
 {
     time += spd;
     print = string_copy(text,0,time);
+}
+else
+{
+    done = true;
 }
 </string>
           </argument>
