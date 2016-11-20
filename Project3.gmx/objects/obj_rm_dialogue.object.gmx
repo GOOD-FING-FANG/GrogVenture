@@ -37,7 +37,7 @@ dialogue[0,0] = "GROG!!";
 dialogue[0,1] = Player;
 dialogue[1,0] = "Hego hygo, neighborezee!";
 dialogue[1,1] = Spider;
-dialogue[2,0] = "sigh#Hey Woodrow";
+dialogue[2,0] = "/*sigh/*#Hey Woodrow";
 dialogue[2,1] = Player;
 dialogue[3,0] = "Having a problem there?  I heard some grogs?";
 dialogue[3,1] = Spider;
@@ -49,6 +49,16 @@ dialogue[6,0] = "Already have enough of power?!?#Woodrow, I can never accept tha
 dialogue[6,1] = Player;
 dialogue[7,0] = "Why don’t you come over to my house, I want to#show you something that might help.";
 dialogue[7,1] = Spider;
+dialogue[8,0] = "...";
+dialogue[8,1] = Spider;
+dialogue[9,0] = "...";
+dialogue[9,1] = Spider;
+dialogue[10,0] = "...";
+dialogue[10,1] = Spider;
+dialogue[11,0] = "...";
+dialogue[11,1] = Spider;
+dialogue[12,0] = "TACTICAL NUKE";
+dialogue[12,1] = Spider;
 </string>
           </argument>
         </arguments>
