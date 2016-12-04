@@ -14,6 +14,8 @@
       <sprite>sprites\spr_tom_jump</sprite>
       <sprite>sprites\spr_tom_idle</sprite>
       <sprite>sprites\spr_tom_mask</sprite>
+      <sprite>sprites\spr_tom_crouch</sprite>
+      <sprite>sprites\spr_tom_crouch_mask</sprite>
     </sprites>
     <sprites name="Room Sprites">
       <sprite>sprites\spr_solid</sprite>

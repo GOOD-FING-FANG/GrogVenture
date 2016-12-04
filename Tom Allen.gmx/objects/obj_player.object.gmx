@@ -27,15 +27,19 @@
             <kind>1</kind>
             <string>/// Initialize the player object
 
-plSpeed = 5;
-plAccel = 5;
-plHspeed = 0;
-plVspeed = 0;
-plJumpHeight = -20;
-grav = 1.5;
+plSpeed = 5; //max speed
+plAccel = 5; //acceleration and friction coefficient
+plHspeed = 0; //current horizontal speed
+plVspeed = 0; //current vertical speed
+
+plJumpHeight = -20; //max jump height
+grav = 1.5; //gravity
+
+plJumpBuff = -15; //jump height buff
+plSpeedBuff = 10; //max speed buff
+
+//Initialize player state
 state = move_state;
-plJumpBuff = -15;
-plSpeedBuff = 10;
 
 // Get the input
 get_input();

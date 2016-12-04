@@ -1,5 +1,6 @@
 ///move_state()
 
+//Buff is available
 if(global.bufftime == global.buffduration) {
     if(shift_press) {
         audio_play_sound(snd_tom_grunt, 5, false);
@@ -9,6 +10,7 @@ if(global.bufftime == global.buffduration) {
     }   
 }
 
+//Buff expires
 else if(global.bufftime <= 0) {
     global.portraitversion = 1;
     global.bufftime = global.buffduration;
@@ -16,12 +18,14 @@ else if(global.bufftime <= 0) {
     plSpeed -= plSpeedBuff;
 }
 
+//reset Buff
 if(global.portraitversion == 0) {
     global.bufftime -= 1;
 }
 
-
+//Jump
 if (!place_meeting(x, y+1, obj_solid)) {
+    
     plVspeed += grav;
     
     // Player is in the air
@@ -33,6 +37,7 @@ if (!place_meeting(x, y+1, obj_solid)) {
     if (up_release && plVspeed < -6) {
         plVspeed = -6;
     }
+    
 } else {
     plVspeed = 0;
     
@@ -44,17 +49,30 @@ if (!place_meeting(x, y+1, obj_solid)) {
     
     // Player is on the ground
     if (plHspeed == 0) {
-        sprite_index = spr_tom_idle;
+        
+        //Crouch
+        if (down) {
+            sprite_index = spr_tom_crouch;
+            object_set_mask(obj_player, spr_tom_crouch_mask);
+        }
+        //Stand
+        else {
+            sprite_index = spr_tom_idle;
+            object_set_mask(obj_player, spr_tom_mask)
+        }
     } else {
         sprite_index = spr_tom_walk;
         image_speed = .6;
     }
 }
 
+
+//Right/Left Movement
 if (right || left) {
     plHspeed += (right-left)*plAccel;
     //plHspeed_dir = right - left;
     
+    //enforce speed limit
     if (plHspeed > plSpeed) plHspeed = plSpeed;
     if (plHspeed < -plSpeed) plHspeed = -plSpeed;
 } else {
@@ -73,32 +91,4 @@ if (plHspeed != 0) {
 //}
 
 move(obj_solid);
-/*
-/// Check for ledge grab state
-var falling = y-yprevious > 0;
-var wasnt_wall = !position_meeting(x+17*image_xscale, yprevious, obj_solid);
-var is_wall = position_meeting(x+17*image_xscale, y, obj_solid);
 
-if (falling && wasnt_wall && is_wall) {
-    plHspeed = 0;
-    plVspeed = 0;
-    
-    // Move against the ledge
-    while (!place_meeting(x+image_xscale, y, obj_solid)) {
-        x+=image_xscale;
-    }
-    
-    // Make sure we are the right height
-    while (position_meeting(x+17*image_xscale, y-1, obj_solid)) {
-        y-=1;
-    }
-    
-    //sprite_index = spr_player_ledge_grab;
-    //state = ledge_grab_state;
-    
-    // Play the ledge grab sound
-    //audio_emitter_pitch(audio_em, 1.5);
-    //audio_emitter_gain(audio_em, .1);
-    //audio_play_sound_on(audio_em, snd_step, false, 6);
-}
-*/
