@@ -42,7 +42,7 @@ if (!place_meeting(x, y+1, obj_solid)) {
     plVspeed = 0;
     
     // Jumping code
-    if (up) {
+    if (up && global.dialogueDone) {
         plVspeed = plJumpHeight;
         //audio_play_sound(snd_tom_grunt, 5, false);
     }

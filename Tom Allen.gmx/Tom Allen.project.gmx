@@ -20,6 +20,7 @@
     <sprites name="Room Sprites">
       <sprite>sprites\spr_solid</sprite>
       <sprite>sprites\spr_block</sprite>
+      <sprite>sprites\spr_house</sprite>
     </sprites>
     <sprites name="GUI">
       <sprite>sprites\spr_heartcontainer</sprite>
@@ -49,22 +50,30 @@
         <script>scripts\bug_Move.gml</script>
       </scripts>
     </scripts>
+    <script>scripts\scr_text.gml</script>
   </scripts>
+  <fonts name="fonts">
+    <font>fonts\fnt_dialogue</font>
+  </fonts>
   <objects name="objects">
     <objects name="Player Objects">
       <object>objects\obj_player</object>
       <object>objects\obj_PlayerStats</object>
     </objects>
+    <object>objects\obj_text</object>
     <objects name="Room Objects">
       <object>objects\obj_block</object>
       <object>objects\obj_solid</object>
       <object>objects\obj_background</object>
+      <object>objects\obj_rm_dialogue</object>
+      <object>objects\obj_house</object>
     </objects>
     <objects name="Enemy Objects">
       <object>objects\obj_bug</object>
     </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_level1</room>
     <room>rooms\rm_wideroom</room>
   </rooms>
   <help>
