@@ -135,7 +135,8 @@ event_inherited();
           <argument>
             <kind>1</kind>
             <string>/// Execute the state
-script_execute(state);
+if !instance_exists(obj_text) script_execute(state);
+
 </string>
           </argument>
         </arguments>

@@ -34,6 +34,9 @@ global.maxhp = 16;
 global.portraitversion = 1;
 global.bufftime = 360; //360
 global.buffduration = 360; //360
+
+// Initialize the dialogue status
+global.dialogueDone = true;
 </string>
           </argument>
         </arguments>
