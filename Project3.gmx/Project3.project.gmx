@@ -95,10 +95,12 @@
       <script>scripts\boss_smash_state.gml</script>
       <script>scripts\boss_stall_state.gml</script>
     </scripts>
+    <script>scripts\scr_text.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_title</font>
     <font>fonts\fnt_start</font>
+    <font>fonts\fnt_dialogue</font>
   </fonts>
   <objects name="objects">
     <objects name="Level">
@@ -128,8 +130,13 @@
     <objects name="Boss">
       <object>objects\Boss</object>
     </objects>
+    <objects name="Dialogue">
+      <object>objects\obj_text</object>
+      <object>objects\obj_rm_dialogue</object>
+    </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_dialogue_test</room>
     <room>rooms\rm_menu</room>
     <room>rooms\rm_highscore</room>
     <room>rooms\rm_one</room>
