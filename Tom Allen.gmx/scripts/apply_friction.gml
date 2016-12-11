@@ -1,11 +1,11 @@
 ///apply_friction(amount)
 var amount = argument[0];
 
-if (plHspeed != 0) {
-    if (abs(plHspeed)-amount > 0) {
-        plHspeed -= amount*image_xscale;
+if (pHspd != 0) {
+    if (abs(pHspd)-amount > 0) {
+        pHspd -= amount*image_xscale;
     } else {
-        plHspeed = 0;
+        pHspd = 0;
     }
 }
 

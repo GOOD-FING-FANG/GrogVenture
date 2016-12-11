@@ -27,9 +27,9 @@
             <kind>1</kind>
             <string>///Run the dialogue for the test room
 
-global.dialogueDone = false;
+//global.dialogueDone = false;
 
-get_input();
+//get_input();
 
 count = 0;
 
@@ -75,6 +75,7 @@ dialogue[7,1] = obj_bug;
             <kind>1</kind>
             <string>///Step through the dialogue tree
 
+
 if(count == 0)
 {
     if(keyboard_check_pressed(vk_space))
@@ -100,7 +101,8 @@ else
                 }
                 else if(array_height_2d(dialogue) == count)
                 {
-                    global.dialogueDone = true;
+                    //global.dialogueDone = true;
+                    obj_player.state = states.active;
                 }
             }
         }

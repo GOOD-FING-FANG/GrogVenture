@@ -27,24 +27,25 @@
             <kind>1</kind>
             <string>/// Initialize the player object
 
-plSpeed = 5; //max speed
-plAccel = 5; //acceleration and friction coefficient
-plHspeed = 0; //current horizontal speed
-plVspeed = 0; //current vertical speed
+pSpd = 5; //max speed
+pAccel = 5; //acceleration and friction coefficient
+pHspd = 0; //current horizontal speed
+pVspd = 0; //current vertical speed
 
-plJumpHeight = -20; //max jump height
+pJumpHeight = -20; //max jump height
+pDblJump = -15;
 grav = 1.5; //gravity
 
-plJumpBuff = -15; //jump height buff
-plSpeedBuff = 10; //max speed buff
+pJumpBuff = -15; //jump height buff
+pSpdBuff = 10; //max speed buff
 
 //Initialize player state
-state = move_state;
+state = states.active;
 
 // Get the input
-if(global.dialogueDone) {
-get_input();
-}
+//if(global.dialogueDone) {
+//get_input();
+//}
 
 // Create the audio emitter
 audio_em = audio_emitter_create();
@@ -71,12 +72,18 @@ audio_em = audio_emitter_create();
           <argument>
             <kind>1</kind>
             <string>/// Control the player's state
-if(global.dialogueDone) {
+//if(global.dialogueDone) {
 
-get_input();
+//get_input();
 
 // Execute the state
-script_execute(state);
+//script_execute(state);
+//}
+
+switch (state)
+{
+    case states.active: scr_player_active(); break;
+    case states.cutscene: scr_player_cutscene(); break;
 }
 </string>
           </argument>

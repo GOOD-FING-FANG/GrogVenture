@@ -10,7 +10,7 @@
   <persistent>0</persistent>
   <colour>12632256</colour>
   <showcolour>-1</showcolour>
-  <code></code>
+  <code>obj_player.state = states.cutscene;</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
@@ -518,7 +518,7 @@
     <instance objName="obj_block" x="608" y="704" name="inst_0BF1E96E" locked="0" code="" scaleX="-1" scaleY="-0.53125" colour="4294967295" rotation="0"/>
     <instance objName="obj_block" x="576" y="704" name="inst_60C3D032" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_rm_dialogue" x="544" y="192" name="inst_6E31FC31" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_player" x="480" y="672" name="inst_FE48362B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_player" x="480" y="702" name="inst_FE48362B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_bug" x="736" y="704" name="inst_06DBE95F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>

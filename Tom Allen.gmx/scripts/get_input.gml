@@ -8,5 +8,6 @@ down_release = keyboard_check_released(vk_down);
 
 shift_press = keyboard_check_pressed(vk_shift);
 
-up = keyboard_check_pressed(vk_space);
-up_release = keyboard_check_released(vk_space);
+space = keyboard_check_pressed(vk_space);
+space_release = keyboard_check_released(vk_space);
+

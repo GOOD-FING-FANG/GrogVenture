@@ -1,4 +1,6 @@
-///move_state()
+/// Player's Active State
+
+get_input();
 
 //Buff is available
 if(global.bufftime == global.buffduration) {
@@ -33,8 +35,15 @@ if (!place_meeting(x, y+1, obj_solid)) {
     image_speed = 0;
     image_index = (pVspd > 0);
     
+    if (space && !doubleJumped) {
+        pVspd = pDblJump;
+        doubleJumped = true;
+    }
+    
+    //audio_play_sound(snd_tom_grunt, 5, false);
+    
     // Control the jump height
-    if (up_release && pVspd < -6) {
+    if (space_release && pVspd < -6) {
         pVspd = -6;
     }
     
@@ -42,8 +51,9 @@ if (!place_meeting(x, y+1, obj_solid)) {
     pVspd = 0;
     
     // Jumping code
-    if (up && global.dialogueDone) {
+    if (space) {
         pVspd = pJumpHeight;
+        doubleJumped = false;
         //audio_play_sound(snd_tom_grunt, 5, false);
     }
     

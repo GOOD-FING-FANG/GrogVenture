@@ -2,19 +2,20 @@
 var collision_object = argument0;
 
 // Horizontal Collisions
-if (place_meeting(x+plHspeed, y, collision_object)) {
-    while (!place_meeting(x+sign(plHspeed), y, collision_object)) {
-        x += sign(plHspeed);
+if (place_meeting(x+pHspd, y, collision_object)) {
+    while (!place_meeting(x+sign(pHspd), y, collision_object)) {
+        x += sign(pHspd);
     }
-    plHspeed = 0;
+    pHspd = 0;
 }
-x += plHspeed;
+x += pHspd;
 
 // Vertical Collisions
-if (place_meeting(x, y+plVspeed, collision_object)) {
-    while (!place_meeting(x, y+sign(plVspeed), collision_object)) {
-        y += sign(plVspeed);
+if (place_meeting(x, y+pVspd, collision_object)) {
+    while (!place_meeting(x, y+sign(pVspd), collision_object)) {
+        y += sign(pVspd);
     }
-    plVspeed = 0;
+    pVspd = 0;
 }
-y += plVspeed;
+y += pVspd;
+

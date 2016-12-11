@@ -26,9 +26,9 @@
           <argument>
             <kind>1</kind>
             <string>/// Initialize the Player Stats object
-display_set_gui_size(view_wview[0], view_hview[0]);
+//display_set_gui_size(view_wview[0], view_hview[0]);
 
-// Initialize some variables
+/*// Initialize some variables
 global.hp = 14;
 global.maxhp = 16;
 global.portraitversion = 1;
@@ -37,6 +37,7 @@ global.buffduration = 360; //360
 
 // Initialize the dialogue status
 global.dialogueDone = true;
+*/
 </string>
           </argument>
         </arguments>
@@ -118,6 +119,7 @@ for (var i=0; i &lt; ceil(global.maxhp/4); i++) {
     
 draw_text(40, 80, floor(global.bufftime/60)); 
 draw_text(30, 100, string(global.hp) + "\" + string(global.maxhp));
+draw_text(30, 120, string(obj_player.state));
 </string>
           </argument>
         </arguments>

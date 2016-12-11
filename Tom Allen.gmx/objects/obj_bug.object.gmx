@@ -162,8 +162,8 @@ if !instance_exists(obj_text) script_execute(state);
             <string>/// Jump
 if (state == bug_Idle) {
     if (instance_exists(obj_player)) {
-        plHspeed = sign(obj_player.x-x)*spd;
-        plVspeed = -abs(plHspeed*2);
+        pHspd = sign(obj_player.x-x)*spd;
+        pVspd = -abs(pHspd*2);
     }
     
     horizontal_move_bounce(obj_solid);
