@@ -4,7 +4,7 @@ if (instance_exists(obj_player)) {
     
 
     
-    if (dis < sight && alarm[0] <= 0) {
+    if (dis <= sight && alarm[0] <= 0) {
         image_speed = .5;
         
         // Make sure we face the player
@@ -12,10 +12,25 @@ if (instance_exists(obj_player)) {
             image_xscale = sign(obj_player.x-x);
         }
     }
+    
+    // Not within aggro range
     else if (dis > sight) {
         if(wanderSteps < wanderRange && alarm[1] <= 0) {
-            x += wanderDir;
-            wanderSteps++;
+            //if(!place_meeting(x, y+1, obj_solid))
+            //{
+            //    pVspd+=grav;
+            //}
+            if(!place_meeting(bbox_right+1, bbox_bottom+1, obj_solid) || place_meeting(x+wanderDir, y, obj_solid))
+            {
+                wanderDir *= -1;
+                wanderSteps = 0;
+                image_xscale = wanderDir;
+            }
+            else
+            {
+                x += wanderDir;
+                wanderSteps++;
+            }
             
         }
         else if (wanderSteps == wanderRange) {

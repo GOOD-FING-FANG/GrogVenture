@@ -2,39 +2,34 @@
 
 get_input();
 
+
+
+// ---------- Buff ----------
+
 //Buff is available
-if(global.bufftime == global.buffduration) {
+if(bufftime == buffduration) {
     if(shift_press) {
-        audio_play_sound(snd_tom_grunt, 5, false);
-        global.portraitversion = 0;
-        pJumpHeight += pJumpBuff;
-        pSpd += pSpdBuff;
-    }   
+        buffState = buffStates.grog;
+    }
+    if(tab_press) {
+        buffState = buffStates.groggrog;
+    }
 }
 
-//Buff expires
-else if(global.bufftime <= 0) {
-    global.portraitversion = 1;
-    global.bufftime = global.buffduration;
-    pJumpHeight -= pJumpBuff;
-    pSpd -= pSpdBuff;
-}
+// ---------- End Buff ----------
 
-//reset Buff
-if(global.portraitversion == 0) {
-    global.bufftime -= 1;
-}
+// ---------- Jump ----------
 
-//Jump
+// Player is in the air
 if (!place_meeting(x, y+1, obj_solid)) {
     
     pVspd += grav;
-    
-    // Player is in the air
+     
     sprite_index = spr_tom_jump;
     image_speed = 0;
     image_index = (pVspd > 0);
     
+    // Double Jump
     if (space && !doubleJumped) {
         pVspd = pDblJump;
         doubleJumped = true;
@@ -46,8 +41,11 @@ if (!place_meeting(x, y+1, obj_solid)) {
     if (space_release && pVspd < -6) {
         pVspd = -6;
     }
-    
-} else {
+
+}
+
+// Player is on the ground 
+else {
     pVspd = 0;
     
     // Jumping code
@@ -57,7 +55,7 @@ if (!place_meeting(x, y+1, obj_solid)) {
         //audio_play_sound(snd_tom_grunt, 5, false);
     }
     
-    // Player is on the ground
+    // Not jumping and not moving
     if (pHspd == 0) {
         
         //Crouch
@@ -70,28 +68,44 @@ if (!place_meeting(x, y+1, obj_solid)) {
             sprite_index = spr_tom_idle;
             object_set_mask(obj_player, spr_tom_mask)
         }
-    } else {
+    } 
+    
+    // Not jumping, but moving
+    else {
         sprite_index = spr_tom_walk;
         image_speed = .6;
     }
 }
 
+// ---------- End Jump ----------
 
-//Right/Left Movement
+// ---------- Horizontal Movement ----------
+
+// Moving right or left
 if (right || left) {
     pHspd += (right-left)*pAccel;
-    //pHspd_dir = right - left;
-    
-    //enforce speed limit
+
+    // enforce speed limit
     if (pHspd > pSpd) pHspd = pSpd;
     if (pHspd < -pSpd) pHspd = -pSpd;
-} else {
+} 
+
+// Stop moving, apply friction
+else {
     apply_friction(pAccel);
 }
 
+// Set sprite direction
 if (pHspd != 0) {
     image_xscale = sign(pHspd);
 }
+
+// ---------- End Horizontal Movement ----------
+
+// ---------- Movement and Collision ----------
+move(obj_solid);
+
+
 
 // Play the landing sound
 //if (place_meeting(x, y+pVspd+1, obj_solid) && pVspd > 0) {
@@ -99,6 +113,3 @@ if (pHspd != 0) {
 //    audio_emitter_gain(audio_em, .2);
 //    audio_play_sound_on(audio_em, snd_step, false, 6);
 //}
-
-move(obj_solid);
-

@@ -88,7 +88,7 @@ global.dialogueDone = true;
           <argument>
             <kind>1</kind>
             <string>//Draw portrait
-draw_sprite_ext(spr_tom_portrait, global.portraitversion, 75, 75, 1, 1, 0, c_white, 1);
+draw_sprite_ext(spr_tom_portrait, obj_player.portraitversion, 75, 75, 1, 1, 0, c_white, 1);
 
     /*
 // Draw the heart spaces
@@ -101,8 +101,8 @@ draw_sprite_ext(spr_tom_portrait, global.portraitversion, 75, 75, 1, 1, 0, c_whi
         draw_sprite_ext(spr_heartcontainer, 0, 125+i*36, 70, 1, 1, 0, c_white, 1);
     }
  */  
-var tempHP = global.hp;
-for (var i=0; i &lt; ceil(global.maxhp/4); i++) {
+var tempHP = obj_player.hp;
+for (var i=0; i &lt; ceil(obj_player.maxhp/4); i++) {
     if (tempHP &gt; 4) {
         draw_sprite_ext(spr_heartcontainer, 0, 100+i*36, 60, 1, 1, 0, c_white, 1);
         tempHP -= 4;   
@@ -117,8 +117,8 @@ for (var i=0; i &lt; ceil(global.maxhp/4); i++) {
     
 }
     
-draw_text(40, 80, floor(global.bufftime/60)); 
-draw_text(30, 100, string(global.hp) + "\" + string(global.maxhp));
+draw_text(40, 80, floor(obj_player.bufftime/60)); 
+draw_text(30, 100, string(obj_player.hp) + "\" + string(obj_player.maxhp));
 draw_text(30, 120, string(obj_player.state));
 </string>
           </argument>

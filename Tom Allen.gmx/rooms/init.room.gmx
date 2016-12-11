@@ -13,11 +13,11 @@
   <code>display_set_gui_size(view_wview[0], view_hview[0]);
 
 // Initialize some variables
-global.hp = 14;
-global.maxhp = 16;
-global.portraitversion = 1;
-global.bufftime = 360; //360
-global.buffduration = 360; //360
+//global.hp = 14;
+//global.maxhp = 16;
+//global.portraitversion = 1;
+//global.bufftime = 360; //360
+//global.buffduration = 360; //360
 
 // Initialize the dialogue status
 //global.dialogueDone = true;
@@ -25,7 +25,15 @@ global.buffduration = 360; //360
 enum states
 {
     active,
-    cutscene
+    cutscene,
+    damage
+}
+
+enum buffStates
+{
+    normal,
+    grog,
+    groggrog
 }
 
 room_goto_next();</code>

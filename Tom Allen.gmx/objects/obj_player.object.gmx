@@ -27,25 +27,30 @@
             <kind>1</kind>
             <string>/// Initialize the player object
 
+// Physics Variables
 pSpd = 5; //max speed
 pAccel = 5; //acceleration and friction coefficient
 pHspd = 0; //current horizontal speed
 pVspd = 0; //current vertical speed
-
-pJumpHeight = -20; //max jump height
-pDblJump = -15;
 grav = 1.5; //gravity
 
-pJumpBuff = -15; //jump height buff
-pSpdBuff = 10; //max speed buff
+// Player Stats Variables
+hp = 14; //Current hit points
+maxhp = 16; //Maximum hit points
+pJumpHeight = -20; //max jump height
+pDblJump = -15; //Double Jump Height
+
+// Buff Variables
+portraitversion = 1; //Buffed or Unbuffed portrait
+bufftime = 360; //360
+buffduration = 360; //360
+pJumpBuff = -5; //jump height buff
+pSpdBuff = 5; //max speed buff
+pHPBuff = 20; //Max HP buff
 
 //Initialize player state
 state = states.active;
-
-// Get the input
-//if(global.dialogueDone) {
-//get_input();
-//}
+buffState = buffStates.normal;
 
 // Create the audio emitter
 audio_em = audio_emitter_create();
@@ -84,7 +89,66 @@ switch (state)
 {
     case states.active: scr_player_active(); break;
     case states.cutscene: scr_player_cutscene(); break;
+    case states.damage: scr_player_damaged(); break;
 }
+
+switch (buffState)
+{  
+    case buffStates.grog: scr_player_grog(); break;
+    case buffStates.groggrog: scr_player_groggrog(); break;
+}
+
+if (hp &lt;= 0) game_restart();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_enemyParent">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Collide with an enemy
+var above_enemy = y &lt; other.y+pVspd;
+var falling = pVspd &gt; 0;
+
+if (above_enemy &amp;&amp; falling) {
+    if (!place_meeting(x, yprevious, obj_solid)) {
+        y=yprevious;
+    }
+    
+    while(!place_meeting(x, y+1, other)) {
+        y++;
+    }
+
+    // Kill the enemy
+    with (other) {
+        instance_destroy();
+    }
+    
+    // Bounce off the enemy
+    pVspd = -(16/1.5);
+    
+    // Play the sound
+    //audio_play_sound(snd_step, 6, false);
+} else {
+    // Take damage
+    scr_take_damage();
+}
+
 </string>
           </argument>
         </arguments>
