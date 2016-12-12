@@ -87,6 +87,17 @@ else
 draw_set_alpha(alpha);
 if(alpha &lt; 1) alpha += spd/10; else alpha = 1;
 
+//Check to see if box will be positioned offscreen and move if needed
+if(x &lt; 0)
+{
+    x = 0;
+}
+else if(x + boxwidth &gt; view_wview[0])
+{
+    x = view_wview[0] - boxwidth;
+}
+
+//Set the font and box colors, and draw
 draw_set_font(fnt_dialogue);
 draw_set_color(c_gray);
 draw_rectangle(x,y,x+boxwidth,y+boxheight,0);
