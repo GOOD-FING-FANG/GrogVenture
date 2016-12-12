@@ -30,6 +30,8 @@ print = "";
 time = 0;
 depth = depth - instance_number(obj_text);
 done = true;
+
+
 </string>
           </argument>
         </arguments>
@@ -88,13 +90,13 @@ draw_set_alpha(alpha);
 if(alpha &lt; 1) alpha += spd/10; else alpha = 1;
 
 //Check to see if box will be positioned offscreen and move if needed
-if(x &lt; 0)
+if(x &lt; view_xview[0])
 {
-    x = 0;
+    x = view_xview[0];
 }
-else if(x + boxwidth &gt; view_wview[0])
+else if((x + boxwidth) &gt; (view_xview[0] + view_wview[0]))
 {
-    x = view_wview[0] - boxwidth;
+    x = view_xview[0] + view_wview[0] - padding - boxwidth;
 }
 
 //Set the font and box colors, and draw
