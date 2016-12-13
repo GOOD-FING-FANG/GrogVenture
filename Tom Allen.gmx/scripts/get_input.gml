@@ -12,6 +12,8 @@ tab_press = keyboard_check_pressed(vk_tab);
 space = keyboard_check_pressed(vk_space);
 space_release = keyboard_check_released(vk_space);
 
+ctrl = keyboard_check(vk_control);
+
 esc = keyboard_check(vk_escape);
 
 if (esc) game_restart();

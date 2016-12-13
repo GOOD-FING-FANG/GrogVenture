@@ -5,8 +5,8 @@ if (state != states.damage) {
     //audio_play_sound_on(audio_em, snd_ouch, false, 8);
 
     image_blend = make_colour_rgb(220, 150, 150);
-    pVspd = -12;
-    pHspd = (sign(x-other.x)*10);
+    vspd = -12;
+    hspd = (sign(x-other.x)*10);
     
     state = states.damage;
     

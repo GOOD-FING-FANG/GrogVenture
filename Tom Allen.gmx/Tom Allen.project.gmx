@@ -29,6 +29,9 @@
     <sprites name="Enemy Sprites">
       <sprite>sprites\spr_bug</sprite>
     </sprites>
+    <sprites name="Tools">
+      <sprite>sprites\spr_sledge</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_wrench</background>
@@ -38,6 +41,7 @@
     <scripts name="Helper Scripts">
       <script>scripts\get_input.gml</script>
       <script>scripts\move.gml</script>
+      <script>scripts\move_carefully.gml</script>
       <script>scripts\apply_friction.gml</script>
       <script>scripts\scr_take_damage.gml</script>
       <script>scripts\horizontal_move_bounce.gml</script>
@@ -45,6 +49,7 @@
     </scripts>
     <scripts name="Player States">
       <script>scripts\scr_player_active.gml</script>
+      <script>scripts\scr_player_attack.gml</script>
       <script>scripts\scr_player_cutscene.gml</script>
       <script>scripts\scr_player_damaged.gml</script>
       <script>scripts\move_state.gml</script>
@@ -68,8 +73,12 @@
     <objects name="Player Objects">
       <object>objects\obj_player</object>
       <object>objects\obj_PlayerStats</object>
+      <object>objects\obj_sledge</object>
     </objects>
-    <object>objects\obj_text</object>
+    <objects name="Enemy Objects">
+      <object>objects\obj_enemyParent</object>
+      <object>objects\obj_bug</object>
+    </objects>
     <objects name="Room Objects">
       <object>objects\obj_block</object>
       <object>objects\obj_solid</object>
@@ -77,15 +86,12 @@
       <object>objects\obj_rm_dialogue</object>
       <object>objects\obj_house</object>
     </objects>
-    <objects name="Enemy Objects">
-      <object>objects\obj_enemyParent</object>
-      <object>objects\obj_bug</object>
-    </objects>
+    <object>objects\obj_text</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\rm_level1</room>
     <room>rooms\init</room>
     <room>rooms\rm_testroom</room>
+    <room>rooms\rm_level1</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

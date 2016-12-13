@@ -1,12 +1,22 @@
-///horizontal_move_bounce(collision_object)
+///move(collision_object)
 var collision_object = argument0;
 
 // Horizontal Collisions
-if (place_meeting(x+hspd, y, collision_object)) {
+// Prevent falling off left ledge
+if (!place_meeting(bbox_left-1, bbox_bottom+1, obj_solid) && sign(hspd) == -1)
+{
+    hspd = 0;
+}
+// Prevent falling off right ledge
+else if (!place_meeting(bbox_right+1, bbox_bottom+1, obj_solid) && sign(hspd) == 1)
+{
+    hspd = 0;
+}
+else if (place_meeting(x+hspd, y, collision_object)) {
     while (!place_meeting(x+sign(hspd), y, collision_object)) {
         x += sign(hspd);
     }
-    hspd = -(hspd/2);
+    hspd = 0;
 }
 x += hspd;
 
@@ -18,3 +28,4 @@ if (place_meeting(x, y+vspd, collision_object)) {
     vspd = 0;
 }
 y += vspd;
+

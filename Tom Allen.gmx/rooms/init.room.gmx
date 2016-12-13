@@ -25,6 +25,7 @@
 enum states
 {
     active,
+    attacking,
     cutscene,
     damage
 }

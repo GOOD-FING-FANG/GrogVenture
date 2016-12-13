@@ -3,15 +3,15 @@
 
 // Apply gravity
 if (!place_meeting(x, y+1, obj_solid)) {
-    pVspd += grav;
+    vspd += grav;
 } else {
-    pVspd = 0;
+    vspd = 0;
     
     // Use friction
     apply_friction(acc);
     
     // Check for idle state
-    if (pHspd == 0 && pVspd == 0) {
+    if (hspd == 0 && vspd == 0) {
         state = bug_Idle;
         alarm[0] = 15;
         alarm[1] = 5;
@@ -20,7 +20,8 @@ if (!place_meeting(x, y+1, obj_solid)) {
     }
 }
 
-if (pHspd != 0) image_xscale = sign(pHspd);
+if (hspd != 0) image_xscale = sign(hspd);
 
 // Move
 horizontal_move_bounce(obj_solid);
+wanderSteps = 0;

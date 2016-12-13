@@ -36,6 +36,8 @@ wanderDir = 1; //wander direction (1= right, -1 = left)
 spd = 6;
 acc = 2;
 grav = 1;
+hspd = 0;
+vspd = 0;
 
 // Set the bug's state
 state = bug_Idle;
@@ -162,8 +164,8 @@ if !instance_exists(obj_text) script_execute(state);
             <string>/// Jump
 if (state == bug_Idle) {
     if (instance_exists(obj_player)) {
-        pHspd = sign(obj_player.x-x)*spd;
-        pVspd = -abs(pHspd*2);
+        hspd = sign(obj_player.x-x)*spd;
+        vspd = -abs(hspd*2);
     }
     
     horizontal_move_bounce(obj_solid);

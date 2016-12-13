@@ -26,29 +26,29 @@ if(global.portraitversion == 0) {
 //Jump
 if (!place_meeting(x, y+1, obj_solid)) {
     
-    pVspd += grav;
+    vspd += grav;
     
     // Player is in the air
     sprite_index = spr_tom_jump;
     image_speed = 0;
-    image_index = (pVspd > 0);
+    image_index = (vspd > 0);
     
     // Control the jump height
-    if (up_release && pVspd < -6) {
-        pVspd = -6;
+    if (up_release && vspd < -6) {
+        vspd = -6;
     }
     
 } else {
-    pVspd = 0;
+    vspd = 0;
     
     // Jumping code
     if (up && global.dialogueDone) {
-        pVspd = pJumpHeight;
+        vspd = pJumpHeight;
         //audio_play_sound(snd_tom_grunt, 5, false);
     }
     
     // Player is on the ground
-    if (pHspd == 0) {
+    if (hspd == 0) {
         
         //Crouch
         if (down) {
@@ -69,22 +69,22 @@ if (!place_meeting(x, y+1, obj_solid)) {
 
 //Right/Left Movement
 if (right || left) {
-    pHspd += (right-left)*pAccel;
-    //pHspd_dir = right - left;
+    hspd += (right-left)*pAccel;
+    //hspd_dir = right - left;
     
     //enforce speed limit
-    if (pHspd > pSpd) pHspd = pSpd;
-    if (pHspd < -pSpd) pHspd = -pSpd;
+    if (hspd > pSpd) hspd = pSpd;
+    if (hspd < -pSpd) hspd = -pSpd;
 } else {
     apply_friction(pAccel);
 }
 
-if (pHspd != 0) {
-    image_xscale = sign(pHspd);
+if (hspd != 0) {
+    image_xscale = sign(hspd);
 }
 
 // Play the landing sound
-//if (place_meeting(x, y+pVspd+1, obj_solid) && pVspd > 0) {
+//if (place_meeting(x, y+vspd+1, obj_solid) && vspd > 0) {
 //    audio_emitter_pitch(audio_em, random_range(.8, 1.2));
 //    audio_emitter_gain(audio_em, .2);
 //    audio_play_sound_on(audio_em, snd_step, false, 6);
