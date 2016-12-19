@@ -92,7 +92,7 @@ if(alpha &lt; 1) alpha += spd/10; else alpha = 1;
 //Check to see if box will be positioned offscreen and move if needed
 if(x &lt; view_xview[0])
 {
-    x = view_xview[0];
+    x = view_xview[0] + padding;
 }
 else if((x + boxwidth) &gt; (view_xview[0] + view_wview[0]))
 {

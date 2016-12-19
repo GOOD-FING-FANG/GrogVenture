@@ -32,6 +32,9 @@
     <sprites name="Tools">
       <sprite>sprites\spr_sledge</sprite>
     </sprites>
+    <sprites name="NPC Sprites">
+      <sprite>sprites\spr_woodrow</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_wrench</background>
@@ -85,8 +88,11 @@
       <object>objects\obj_background</object>
       <object>objects\obj_rm_dialogue</object>
       <object>objects\obj_house</object>
+      <object>objects\obj_text</object>
     </objects>
-    <object>objects\obj_text</object>
+    <objects name="NPC Objects">
+      <object>objects\obj_woodrow</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\init</room>
