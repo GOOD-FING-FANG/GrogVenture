@@ -4,7 +4,7 @@ var plDirection = obj_player.image_xscale;
 if (alarm[0] <= 0)
 {
     alarm[0] = 30;
-    with (instance_create(x+(3*plDirection), y-14, tool))
+    with (instance_create(x+(3*plDirection)+other.hspd, y-14, tool))
     {
         image_xscale = plDirection;
         image_speed = 0.2;
@@ -15,9 +15,9 @@ if (alarm[0] <= 0)
             with(obj_enemyParent)
             {
                 vspd = -3;
-                hspd = sign(x - other.x) * 40;
+                hspd = sign(x - other.x) * 30;
                 image_xscale = sign(hspd);
-            
+
             }
         }
         
