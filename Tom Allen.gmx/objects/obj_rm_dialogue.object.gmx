@@ -37,17 +37,17 @@ dialogue[0,0] = "GROG!!";
 dialogue[0,1] = obj_player;
 dialogue[1,0] = "Hego hygo, neighborezee!";
 dialogue[1,1] = obj_woodrow;
-dialogue[2,0] = "/*sigh/*#Hey Woodrow";
+dialogue[2,0] = "\*sigh\*#Hey Woodrow";
 dialogue[2,1] = obj_player;
-dialogue[3,0] = "Having a problem there?  I heard some grogs?";
+dialogue[3,0] = "Having a problem there?#I heard some grogs?";
 dialogue[3,1] = obj_woodrow;
-dialogue[4,0] = "I’m trying to cut down on my lawn mowing time,#but I just can’t find a way to get more power out of this thing.";
+dialogue[4,0] = "I’m trying to cut down on#my lawn mowing time,#but I just can’t find a#way to get more power#out of this thing.";
 dialogue[4,1] = obj_player;
-dialogue[5,0] = "Hmm, do you think you might already have#enough power?";
+dialogue[5,0] = "Hmm, do you think you#might already have#enough power?";
 dialogue[5,1] = obj_woodrow;
-dialogue[6,0] = "Already have enough of power?!?#Woodrow, I can never accept that.";
+dialogue[6,0] = "Already have enough#power?!? Woodrow, I#can never accept that.";
 dialogue[6,1] = obj_player;
-dialogue[7,0] = "Why don’t you come over to my house, I want to#show you something that might help.";
+dialogue[7,0] = "Why don’t you come over#to my house, I want to#show you something that#might help.";
 dialogue[7,1] = obj_woodrow;
 </string>
           </argument>
@@ -78,7 +78,7 @@ if(count == 0)
 {
     if(keyboard_check_pressed(vk_space))
     {       
-        scr_text(dialogue[count,0],spd,dialogue[count,1].x-view_wview[0]/6,dialogue[count,1].y-100);
+        scr_text(dialogue[count,0],spd,dialogue[count,1]);
         count++;
     }
 }
@@ -94,7 +94,7 @@ else
                 
                 if(array_height_2d(dialogue) &gt; count)
                 {
-                    scr_text(dialogue[count,0],spd,dialogue[count,1].x-100,dialogue[count,1].y-100);
+                    scr_text(dialogue[count,0],spd,dialogue[count,1]);
                     count++;
                 }
                 else if(array_height_2d(dialogue) == count)

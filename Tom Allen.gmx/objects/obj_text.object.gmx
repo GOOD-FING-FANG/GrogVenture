@@ -89,16 +89,6 @@ else
 draw_set_alpha(alpha);
 if(alpha &lt; 1) alpha += spd/10; else alpha = 1;
 
-//Check to see if box will be positioned offscreen and move if needed
-if(x &lt; view_xview[0])
-{
-    x = view_xview[0] + padding;
-}
-else if((x + boxwidth) &gt; (view_xview[0] + view_wview[0]))
-{
-    x = view_xview[0] + view_wview[0] - padding - boxwidth;
-}
-
 //Set the font and box colors, and draw
 draw_set_font(fnt_dialogue);
 draw_set_color(c_gray);
@@ -117,6 +107,8 @@ draw_text_ext
     font_size+(font_size/2),
     maxlength
 );
+
+
 
 draw_set_alpha(1);
 </string>
