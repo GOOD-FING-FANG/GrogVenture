@@ -27,12 +27,17 @@
             <kind>1</kind>
             <string>///Run the dialogue for the test room
 
-//Set the counter for dialogue
+//Initialize the dialogue complete and cutscene complete flags
+dialogue_complete = false;
+cutscene_complete = false;
+
+//Initialize the counter for dialogue
 count = 0;
 
-//Set the text speed
+//Initialize the text speed
 spd = 1;
 
+//Initialize an array for the dialogue in the cutscene
 dialogue[0,0] = "GROG!!";
 dialogue[0,1] = obj_player;
 dialogue[1,0] = "Hego hygo, neighborezee!";
@@ -73,7 +78,6 @@ dialogue[7,1] = obj_woodrow;
             <kind>1</kind>
             <string>///Step through the dialogue tree
 
-
 if(count == 0)
 {
     if(keyboard_check_pressed(vk_space))
@@ -82,28 +86,57 @@ if(count == 0)
         count++;
     }
 }
-else
+
+else if(instance_exists(obj_text))
 {
-    if(instance_exists(obj_text))
+    if(obj_text.done)
     {
-        if(obj_text.done)
+        if(keyboard_check_pressed(vk_space))
         {
-            if(keyboard_check_pressed(vk_space))
-            {
-                with (obj_text) instance_destroy();
+            with (obj_text) instance_destroy();
                 
-                if(array_height_2d(dialogue) &gt; count)
-                {
-                    scr_text(dialogue[count,0],spd,dialogue[count,1]);
-                    count++;
-                }
-                else if(array_height_2d(dialogue) == count)
-                {
-                    //global.dialogueDone = true;
-                    obj_player.state = states.active;
-                }
+            if(array_height_2d(dialogue) &gt; count)
+            {
+                scr_text(dialogue[count,0],spd,dialogue[count,1]);
+                count++;
+            }
+            else if(array_height_2d(dialogue) == count)
+            {
+                //global.dialogueDone = true;
+                //obj_player.state = states.active;
+                    
+                dialogue_complete = true;                    
             }
         }
+    }
+}
+
+else if(cutscene_complete)
+{
+    obj_player.stage = 0;
+    obj_woodrow.stage = 0;
+    
+    obj_player.state = states.active;
+}
+
+else if(dialogue_complete)
+{
+    if(obj_player.stage == 0)
+    {
+        if(obj_player.x &lt; 1024)
+        {
+            obj_player.sprite_index = spr_tom_walk;
+            obj_player.x += 5;
+        }
+        else
+        {
+            obj_player.sprite_index = spr_tom_idle;
+            obj_player.stage = 1;
+        }
+    }
+    else
+    {
+        cutscene_complete = true;
     }
 }
 </string>

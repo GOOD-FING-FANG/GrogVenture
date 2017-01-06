@@ -60,6 +60,10 @@ if(time &lt; text_length)
 {
     time += spd;
     print = string_copy(text,0,time);
+    if(time &gt; 2 &amp;&amp; keyboard_check_pressed(vk_space))
+    {
+        spd = 999;
+    }
 }
 else
 {

@@ -52,6 +52,9 @@ pHPBuff = 20; //Max HP buff
 state = states.active;
 buffState = buffStates.normal;
 
+//Initialize cutscene variables
+stage = 0;
+
 // Create the audio emitter
 audio_em = audio_emitter_create();
 </string>
