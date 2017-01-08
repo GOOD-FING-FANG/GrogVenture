@@ -19,8 +19,11 @@ if(bufftime == buffduration) {
 // ---------- End Buff ----------
 
 // ---------- Attack ----------
-if(ctrl)
+if(ctrl && alarm[0] <= 0)
+{
     state = states.attacking;
+    alarm[0] = 30;
+}
 
 // ---------- Jump ----------
 
