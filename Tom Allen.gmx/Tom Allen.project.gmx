@@ -96,8 +96,8 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\init</room>
-    <room>rooms\rm_testroom</room>
     <room>rooms\rm_level1</room>
+    <room>rooms\rm_testroom</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
