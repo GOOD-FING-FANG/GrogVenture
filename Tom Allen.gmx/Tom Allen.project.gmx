@@ -28,6 +28,8 @@
     </sprites>
     <sprites name="Enemy Sprites">
       <sprite>sprites\spr_bug</sprite>
+      <sprite>sprites\spr_juicystump</sprite>
+      <sprite>sprites\spr_stump</sprite>
     </sprites>
     <sprites name="Tools">
       <sprite>sprites\spr_sledge</sprite>
@@ -67,6 +69,11 @@
         <script>scripts\bug_Idle.gml</script>
         <script>scripts\bug_Move.gml</script>
       </scripts>
+      <scripts name="Juicy Stump Scripts">
+        <script>scripts\juicystump_move.gml</script>
+        <script>scripts\juicystump_idle.gml</script>
+        <script>scripts\juicystump_emerge.gml</script>
+      </scripts>
     </scripts>
   </scripts>
   <fonts name="fonts">
@@ -81,6 +88,7 @@
     <objects name="Enemy Objects">
       <object>objects\obj_enemyParent</object>
       <object>objects\obj_bug</object>
+      <object>objects\obj_juicystump</object>
     </objects>
     <objects name="Room Objects">
       <object>objects\obj_block</object>
@@ -96,8 +104,8 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\init</room>
-    <room>rooms\rm_level1</room>
     <room>rooms\rm_testroom</room>
+    <room>rooms\rm_level1</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

@@ -163,7 +163,7 @@ if (above_enemy &amp;&amp; falling) {
 
     // Kill the enemy
     with (other) {
-        instance_destroy();
+        //instance_destroy();
     }
     
     // Bounce off the enemy

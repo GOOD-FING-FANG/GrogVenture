@@ -1,4 +1,4 @@
-///direction_move_bounce(collision_object)
+///direction_move_bounce(collision_object) !!!!May not be necessary anymore!!!!
 var collision_object = argument0;
 
 // Horizontal Collisions

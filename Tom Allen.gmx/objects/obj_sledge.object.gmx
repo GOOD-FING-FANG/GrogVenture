@@ -53,6 +53,15 @@
     vspd = -3;
     hspd = sign(x - other.x) * 30;
     image_xscale = sign(hspd);
+    if(hit == 0)
+    {
+        alarm[2] = 60;
+        hp -= 4;
+        hit = 1;
+    }
+    if(hp &lt;= 0) {
+        instance_destroy();
+    }
 }
 </string>
           </argument>

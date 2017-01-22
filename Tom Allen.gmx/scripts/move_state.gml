@@ -1,4 +1,4 @@
-///move_state()
+///move_state() !!!!May not be necessary anymore!!!!
 
 //Buff is available
 if(global.bufftime == global.buffduration) {
