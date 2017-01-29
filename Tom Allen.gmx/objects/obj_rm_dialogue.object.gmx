@@ -82,9 +82,11 @@ dialogue[7,1] = obj_woodrow;
             <kind>1</kind>
             <string>///Step through the dialogue tree
 
+get_input();
+
 if(count == 0)
 {
-    if(keyboard_check_pressed(vk_space))
+    if(space)
     {       
         scr_text(dialogue[count,0],spd,dialogue[count,1]);
         count++;
@@ -95,7 +97,7 @@ else if(instance_exists(obj_text))
 {
     if(obj_text.done)
     {
-        if(keyboard_check_pressed(vk_space))
+        if(space)
         {
             with (obj_text) instance_destroy();
                 

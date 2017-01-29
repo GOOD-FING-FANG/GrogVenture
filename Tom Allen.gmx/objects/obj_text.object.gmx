@@ -55,12 +55,14 @@ done = true;
           <argument>
             <kind>1</kind>
             <string>///Add letters over time
+get_input();
+
 done = false;
 if(time &lt; text_length)
 {
     time += spd;
     print = string_copy(text,0,time);
-    if(time &gt; 2 &amp;&amp; keyboard_check_pressed(vk_space))
+    if(time &gt; 2 &amp;&amp; space)
     {
         spd = 999;
     }
