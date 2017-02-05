@@ -30,9 +30,11 @@
       <sprite>sprites\spr_bug</sprite>
       <sprite>sprites\spr_juicystump</sprite>
       <sprite>sprites\spr_stump</sprite>
+      <sprite>sprites\spr_circularsaw</sprite>
     </sprites>
     <sprites name="Tools">
       <sprite>sprites\spr_sledge</sprite>
+      <sprite>sprites\spr_sledgeswing</sprite>
     </sprites>
     <sprites name="NPC Sprites">
       <sprite>sprites\spr_woodrow</sprite>
@@ -75,6 +77,10 @@
         <script>scripts\juicystump_idle.gml</script>
         <script>scripts\juicystump_emerge.gml</script>
       </scripts>
+      <scripts name="Saw Scripts">
+        <script>scripts\saw_idle.gml</script>
+        <script>scripts\saw_move.gml</script>
+      </scripts>
     </scripts>
   </scripts>
   <fonts name="fonts">
@@ -90,6 +96,7 @@
       <object>objects\obj_enemyParent</object>
       <object>objects\obj_bug</object>
       <object>objects\obj_juicystump</object>
+      <object>objects\obj_circularsaw</object>
     </objects>
     <objects name="Room Objects">
       <object>objects\obj_block</object>

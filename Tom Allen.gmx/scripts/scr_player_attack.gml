@@ -10,6 +10,7 @@ with (instance_create(x+(3*plDirection)+obj_player.hspd, y-14, tool))
         image_xscale = plDirection;
         image_speed = 0.2;
         
+        
         //hit = collision_rectangle(bbox_left, bbox_bottom, bbox_right, bbox_top, obj_enemyParent, false, true);
     
        /*if (hit != noone)
@@ -23,7 +24,7 @@ with (instance_create(x+(3*plDirection)+obj_player.hspd, y-14, tool))
             }
         } */
     }
-       
+
     
 }
 
