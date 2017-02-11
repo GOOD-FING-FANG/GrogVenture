@@ -25,15 +25,19 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Initialize the bug
+            <string>/// Initialize the enemy (Circular Saw)
 image_speed = 0;
 image_index = 0;
 
 sight = 128;
+
+initialx = x; //initial x position for patrol/leashing
+
 wanderRange = 50; //total wander range
 wanderSteps = 0; //wander steps taken
 wanderDir = 1; //wander direction (1= right, -1 = left)
 spd = 6;
+chaseSpd = 10;
 acc = 2;
 grav = 1;
 hspd = 0;
@@ -41,7 +45,7 @@ vspd = 0;
 
 hit = 0;
 
-// Set the bug's state
+// Set the enemy's state
 state = saw_idle;
 </string>
           </argument>
@@ -198,7 +202,7 @@ if(alarm[2] == 0)
           <argument>
             <kind>1</kind>
             <string>/// Jump
-if (state == saw_idle) {
+/*if (state == saw_idle) {
     if (instance_exists(obj_player)) {
         hspd = sign(obj_player.x-x)*spd;
         vspd = -abs(hspd*2);
@@ -206,7 +210,7 @@ if (state == saw_idle) {
     
     horizontal_move_bounce(obj_solid);
     state = saw_move;
-}
+}*/
 </string>
           </argument>
         </arguments>
