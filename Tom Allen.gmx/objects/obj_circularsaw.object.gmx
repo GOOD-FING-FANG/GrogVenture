@@ -43,6 +43,7 @@ grav = 1;
 hspd = 0;
 vspd = 0;
 
+hp = 10;
 hit = 0;
 
 // Set the enemy's state
@@ -166,19 +167,22 @@ event_inherited();
           <argument>
             <kind>1</kind>
             <string>/// Execute the state
-if !instance_exists(obj_text) script_execute(state);
+//if !instance_exists(obj_text) script_execute(state);
+
 
 if(hit == 1)
 {
-    alarm[2] = 30;
-    draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,c_red,hit);
+    //alarm[2] = 30;
+    image_blend = c_red;
 }
     
 if(alarm[2] == 0)
 {
     hit = 0;
-    draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,c_white,hit);
+    image_blend = c_white;
 }
+
+script_execute(state);
 </string>
           </argument>
         </arguments>

@@ -21,6 +21,7 @@
       <sprite>sprites\spr_solid</sprite>
       <sprite>sprites\spr_block</sprite>
       <sprite>sprites\spr_house</sprite>
+      <sprite>sprites\spr_fenceobject</sprite>
     </sprites>
     <sprites name="GUI">
       <sprite>sprites\spr_heartcontainer</sprite>
@@ -106,6 +107,7 @@
       <object>objects\obj_rm_dialogue</object>
       <object>objects\obj_house</object>
       <object>objects\obj_text</object>
+      <object>objects\obj_fence</object>
     </objects>
     <objects name="NPC Objects">
       <object>objects\obj_woodrow</object>
@@ -113,8 +115,8 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\init</room>
-    <room>rooms\rm_testroom</room>
     <room>rooms\rm_level1</room>
+    <room>rooms\rm_testroom</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

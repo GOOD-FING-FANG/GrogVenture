@@ -73,10 +73,10 @@ y = obj_player.y-14;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>with(obj_enemyParent)
+            <string>with(other)
 {
     vspd = -3;
-    hspd = sign(x - other.x) * 30;
+    hspd = sign(x - other.x) * 15;
     image_xscale = sign(hspd);
     if(hit == 0)
     {
