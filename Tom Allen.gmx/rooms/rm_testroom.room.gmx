@@ -156,7 +156,7 @@
     <instance objName="obj_block" x="896" y="416" name="inst_56330901" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_block" x="768" y="352" name="inst_D50E7882" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_PlayerStats" x="192" y="672" name="inst_A347F94B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_juicystump" x="608" y="731" name="inst_F05070B8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_juicystump" x="608" y="742" name="inst_F05070B8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_circularsaw" x="1280" y="736" name="inst_9423FF76" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_block" x="1024" y="736" name="inst_77B1A1BD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_block" x="1152" y="736" name="inst_65D2029F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

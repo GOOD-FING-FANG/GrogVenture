@@ -22,6 +22,7 @@
       <sprite>sprites\spr_block</sprite>
       <sprite>sprites\spr_house</sprite>
       <sprite>sprites\spr_fenceobject</sprite>
+      <sprite>sprites\spr_door</sprite>
     </sprites>
     <sprites name="GUI">
       <sprite>sprites\spr_heartcontainer</sprite>
@@ -108,6 +109,7 @@
       <object>objects\obj_house</object>
       <object>objects\obj_text</object>
       <object>objects\obj_fence</object>
+      <object>objects\obj_door</object>
     </objects>
     <objects name="NPC Objects">
       <object>objects\obj_woodrow</object>

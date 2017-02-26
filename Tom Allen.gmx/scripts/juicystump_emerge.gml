@@ -4,7 +4,7 @@ if( emergeTimer < 4 )
 {
     if(alarm[1] <= 0)
     {
-        y -= 5;
+        y -= 2;
         alarm[1] = 30;
         emergeTimer++;
         
