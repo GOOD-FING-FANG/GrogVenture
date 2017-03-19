@@ -80,12 +80,16 @@ dialogue[7,1] = obj_woodrow;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Step through the dialogue tree
+            <string>///Run through dialouge and cutscene animation
 
+
+//Read input from user to advance text
 get_input();
 
-if(count == 0)
+//Initial box creation
+if(!dialogue_complete &amp;&amp; count == 0)
 {
+    //Wait for user to press (space) then open the first text box
     if(space)
     {       
         scr_text(dialogue[count,0],spd,dialogue[count,1]);
@@ -95,59 +99,107 @@ if(count == 0)
 
 else if(instance_exists(obj_text))
 {
+    //Wait for previous text box to complete before drawing next one
     if(obj_text.done)
     {
         if(space)
         {
+            //Destroy previous text box and draw next one
             with (obj_text) instance_destroy();
-                
+            
+            //Check to confirm there is another text box to draw    
             if(array_height_2d(dialogue) &gt; count)
             {
                 scr_text(dialogue[count,0],spd,dialogue[count,1]);
                 count++;
             }
+            //If no more text boxes, flag dialogue as complete
             else if(array_height_2d(dialogue) == count)
-            {
-                //global.dialogueDone = true;
-                //obj_player.state = states.active;
-                    
+            {                   
                 dialogue_complete = true;                    
             }
         }
     }
 }
 
-else if(cutscene_complete)
+//Begin moving sprites when dialogue completes
+if(dialogue_complete)
 {
-    obj_player.stage = 0;
-    obj_woodrow.stage = 0;
-    
-    obj_player.state = states.active;
-}
-
-else if(dialogue_complete)
-{
+    //Check stage of the player
     if(obj_player.stage == 0)
     {
-        if(obj_player.x &lt; 1024)
+        //Move player to the fence in room
+        if(obj_player.x &lt; 544)
         {
+            //Set the sprite animation and image speed
             if(obj_player.sprite_index != spr_tom_walk)
             {
                 obj_player.image_index = 0;
                 obj_player.sprite_index = spr_tom_walk;
                 obj_player.image_speed = 0.6;
             }
+            //Set the player movement speed
+            obj_player.x += 5;
+        }
+        //If top statement fails, player must be over 544, and next stage starts
+        else
+        {
+            //Begin to jump over fence
+            obj_player.stage = 1;
+            obj_player.vspd = -15;
+            obj_player.x += 5;
+            
+        }
+    }
+    else if(obj_player.stage == 1)
+    {
+        //Track player in air and apply gravity
+        if(!place_meeting(obj_player.x, obj_player.y+obj_player.vspd, obj_solid))
+        {
+            //Apply gravity
+            obj_player.vspd += 1.5;
+            
+            //Set the sprite for jumping
+            obj_player.sprite_index = spr_tom_jump;
+            obj_player.image_speed = 0;
+            obj_player.image_index = obj_player.vspd &gt; 0;
+                
+            //Continue moving to the right
+            obj_player.x += 5;
+        }
+        
+        //Check to see when the player has landed, and set to stage 2 if so
+        //Player has vspeed == 0 at top of jump, so also check for vertical position
+        if(obj_player.vspeed == 0 &amp;&amp; obj_player.y &gt; 700)
+        {
+            obj_player.stage = 2;
+        }
+    }
+    else if(obj_player.stage == 2)
+    {
+        //Set the sprite animation and image speed
+        if(obj_player.sprite_index != spr_tom_walk)
+        {
+            obj_player.image_index = 0;
+            obj_player.sprite_index = spr_tom_walk;
+            obj_player.image_speed = 0.6;
+        }
+        
+        //Set the player movement speed if they have not reached the door
+        if(obj_player.x &lt; 1056)
+        {
             obj_player.x += 5;
         }
         else
         {
-            obj_player.sprite_index = spr_tom_idle;
-            obj_player.stage = 1;
+            obj_player.stage = 3;
         }
     }
+    
+    //Move NPC to door
     if(obj_woodrow.stage == 0)
     {
-        if(obj_woodrow.x &lt; 1024)
+        if(obj_woodrow.x &lt; 1056)
         {
             obj_woodrow.x += 4;
         }
@@ -156,12 +208,26 @@ else if(dialogue_complete)
             obj_woodrow.stage = 1;
         }
     }
-    if(obj_woodrow.stage == 1 &amp;&amp; obj_player.stage == 1)
+    
+    //Flag cutscene as complete if both sprites have reached their final stage
+    if(obj_woodrow.stage == 1 &amp;&amp; obj_player.stage == 3)
     {
         cutscene_complete = true;
-        room_goto_next();
     }
 }
+
+//When cutscene finishes, reset stages and place player back into active state, advance to next room
+if(cutscene_complete)
+{
+    obj_player.stage = 0;
+    obj_woodrow.stage = 0;
+    
+    obj_player.state = states.active;
+    
+    room_goto_next();
+}
+
+with(obj_player) move(obj_solid);
 </string>
           </argument>
         </arguments>

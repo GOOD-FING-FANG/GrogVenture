@@ -73,7 +73,6 @@
     <instance objName="obj_block" x="4064" y="704" name="inst_02DEAC8A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_rm_dialogue" x="544" y="192" name="inst_6E31FC31" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_player" x="480" y="702" name="inst_FE48362B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_woodrow" x="704" y="704" name="inst_38A78063" locked="0" code="" scaleX="-1.25" scaleY="-1.25" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="32" y="736" name="inst_2D250DB1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="32" y="736" name="inst_25F37F87" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="64" y="736" name="inst_C9EF0666" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -192,6 +191,7 @@
     <instance objName="obj_fence" x="576" y="736" name="inst_D98E7F10" locked="0" code="" scaleX="1.33333337306976" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_door" x="1056" y="736" name="inst_D489DCDA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_door" x="288" y="736" name="inst_A825A859" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_woodrow" x="640" y="704" name="inst_2CA7D7A6" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bg_neighborhood" x="96" y="704" w="32" h="32" xo="32" yo="64" id="10000972" name="inst_4C2920A9" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
