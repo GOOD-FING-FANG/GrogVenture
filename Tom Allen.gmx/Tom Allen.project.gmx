@@ -23,6 +23,7 @@
       <sprite>sprites\spr_house</sprite>
       <sprite>sprites\spr_fenceobject</sprite>
       <sprite>sprites\spr_door</sprite>
+      <sprite>sprites\spr_solid_place</sprite>
     </sprites>
     <sprites name="GUI">
       <sprite>sprites\spr_heartcontainer</sprite>
@@ -44,6 +45,7 @@
   </sprites>
   <backgrounds name="background">
     <background>background\bg_wrench</background>
+    <background>background\bg_neighborhood_old</background>
     <background>background\bg_neighborhood</background>
   </backgrounds>
   <paths name="paths"/>
@@ -119,6 +121,7 @@
     <room>rooms\init</room>
     <room>rooms\rm_level1</room>
     <room>rooms\rm_testroom</room>
+    <room>rooms\rm_stage1_section2</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
