@@ -24,6 +24,12 @@
       <sprite>sprites\spr_fenceobject</sprite>
       <sprite>sprites\spr_door</sprite>
       <sprite>sprites\spr_solid_place</sprite>
+      <sprite>sprites\spr_transitionarea</sprite>
+      <sprites name="Neighborhood Things">
+        <sprite>sprites\spr_carplaceholder</sprite>
+        <sprite>sprites\spr_lampplaceholder</sprite>
+        <sprite>sprites\spr_smlamp</sprite>
+      </sprites>
     </sprites>
     <sprites name="GUI">
       <sprite>sprites\spr_heartcontainer</sprite>
@@ -96,6 +102,7 @@
       <object>objects\obj_player</object>
       <object>objects\obj_PlayerStats</object>
       <object>objects\obj_sledge</object>
+      <object>objects\obj_Starting_Point</object>
     </objects>
     <objects name="Enemy Objects">
       <object>objects\obj_enemyParent</object>
@@ -112,6 +119,11 @@
       <object>objects\obj_text</object>
       <object>objects\obj_fence</object>
       <object>objects\obj_door</object>
+      <objects name="Neighborhood Level">
+        <object>objects\obj_car</object>
+        <object>objects\obj_lamppost</object>
+      </objects>
+      <object>objects\obj_transitionarea</object>
     </objects>
     <objects name="NPC Objects">
       <object>objects\obj_woodrow</object>
@@ -120,8 +132,8 @@
   <rooms name="rooms">
     <room>rooms\init</room>
     <room>rooms\rm_level1</room>
-    <room>rooms\rm_testroom</room>
     <room>rooms\rm_stage1_section2</room>
+    <room>rooms\rm_testroom</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

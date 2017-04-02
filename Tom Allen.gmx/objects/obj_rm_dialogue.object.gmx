@@ -27,37 +27,45 @@
             <kind>1</kind>
             <string>///Run the dialogue for the test room
 
-//Set the player to the cutscene state
-obj_player.state = states.cutscene;
-obj_player.sprite_index = spr_tom_idle;
-
-//Initialize the dialogue complete and cutscene complete flags
-dialogue_complete = false;
-cutscene_complete = false;
-
-//Initialize the counter for dialogue
-count = 0;
-
-//Initialize the text speed
-spd = 1;
-
-//Initialize an array for the dialogue in the cutscene
-dialogue[0,0] = "GROG!!";
-dialogue[0,1] = obj_player;
-dialogue[1,0] = "Hego hygo, neighborezee!";
-dialogue[1,1] = obj_woodrow;
-dialogue[2,0] = "\*sigh\*#Hey Woodrow";
-dialogue[2,1] = obj_player;
-dialogue[3,0] = "Having a problem there?#I heard some grogs?";
-dialogue[3,1] = obj_woodrow;
-dialogue[4,0] = "I’m trying to cut down on#my lawn mowing time,#but I just can’t find a#way to get more power#out of this thing.";
-dialogue[4,1] = obj_player;
-dialogue[5,0] = "Hmm, do you think you#might already have#enough power?";
-dialogue[5,1] = obj_woodrow;
-dialogue[6,0] = "Already have enough#power?!? Woodrow, I#can never accept that.";
-dialogue[6,1] = obj_player;
-dialogue[7,0] = "Why don’t you come over#to my house, I want to#show you something that#might help.";
-dialogue[7,1] = obj_woodrow;
+if(global.dialogue_status[0] == false)
+{
+    //Set the player to the cutscene state
+    obj_player.state = states.cutscene;
+    obj_player.sprite_index = spr_tom_idle;
+    
+    //Initialize the dialogue complete and cutscene complete flags
+    dialogue_complete = false;
+    cutscene_complete = false;
+    
+    //Initialize the counter for dialogue
+    count = 0;
+    
+    //Initialize the text speed
+    spd = 1;
+    
+    //Initialize an array for the dialogue in the cutscene
+    dialogue[0,0] = "GROG!!";
+    dialogue[0,1] = obj_player;
+    dialogue[1,0] = "Hego hygo, neighborezee!";
+    dialogue[1,1] = obj_woodrow;
+    dialogue[2,0] = "\*sigh\*#Hey Woodrow";
+    dialogue[2,1] = obj_player;
+    dialogue[3,0] = "Having a problem there?#I heard some grogs?";
+    dialogue[3,1] = obj_woodrow;
+    dialogue[4,0] = "I’m trying to cut down on#my lawn mowing time,#but I just can’t find a#way to get more power#out of this thing.";
+    dialogue[4,1] = obj_player;
+    dialogue[5,0] = "Hmm, do you think you#might already have#enough power?";
+    dialogue[5,1] = obj_woodrow;
+    dialogue[6,0] = "Already have enough#power?!? Woodrow, I#can never accept that.";
+    dialogue[6,1] = obj_player;
+    dialogue[7,0] = "Why don’t you come over#to my house, I want to#show you something that#might help.";
+    dialogue[7,1] = obj_woodrow;
+}
+else
+{
+    instance_destroy();
+}
+    
 </string>
           </argument>
         </arguments>
@@ -82,11 +90,10 @@ dialogue[7,1] = obj_woodrow;
             <kind>1</kind>
             <string>///Run through dialouge and cutscene animation
 
-
 //Read input from user to advance text
 get_input();
 
-//Initial box creation
+//Initial box creation 
 if(!dialogue_complete &amp;&amp; count == 0)
 {
     //Wait for user to press (space) then open the first text box
@@ -116,7 +123,7 @@ else if(instance_exists(obj_text))
             //If no more text boxes, flag dialogue as complete
             else if(array_height_2d(dialogue) == count)
             {                   
-                dialogue_complete = true;                    
+                dialogue_complete = true;                
             }
         }
     }
@@ -224,10 +231,15 @@ if(cutscene_complete)
     
     obj_player.state = states.active;
     
-    room_goto_next();
+    global.dialogue_status[0] = true;
+    obj_player.x = 1184;
+    obj_player.y = 704;
+    room_goto(rm_level1);
+    
 }
 
 with(obj_player) move(obj_solid);
+
 </string>
           </argument>
         </arguments>
