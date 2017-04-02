@@ -37,13 +37,15 @@ enum buffStates
     groggrog
 }
 
-//Dialogue status array
+//Cutscene status array
 
-global.dialogue_status[0] = false; //Intro
+global.cutscene_status[0] = true; //Intro
+global.cutscene_status[1] = false; //Woodrow Neighborhood Chat
 
+//Warp to first level
 obj_player.x = 480;
 obj_player.y = 704;
-room_goto(rm_level1);</code>
+room_goto(rm_stage1_1);</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>

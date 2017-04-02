@@ -47,7 +47,7 @@ if (!place_meeting(x, y+1, obj_solid)) {
         //audio_play_sound(snd_tom_grunt, 5, false);
     }
     
-    // Player is on the ground
+    // Player is on the ground idle
     if (hspd == 0) {
         
         //Crouch

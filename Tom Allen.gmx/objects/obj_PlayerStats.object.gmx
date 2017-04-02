@@ -120,6 +120,8 @@ for (var i=0; i &lt; ceil(obj_player.maxhp/4); i++) {
 draw_text(40, 80, floor(obj_player.bufftime/60)); 
 draw_text(30, 100, string(obj_player.hp) + "\" + string(obj_player.maxhp));
 draw_text(30, 120, string(obj_player.state));
+if(instance_exists(obj_cut_1_WoodChat)) draw_text(30, 140, string(obj_cut_1_WoodChat.count));
+if(instance_exists(obj_cut_1_WoodChat)) draw_text(30, 160, string(obj_cut_1_WoodChat.dialogue_complete));
 </string>
           </argument>
         </arguments>

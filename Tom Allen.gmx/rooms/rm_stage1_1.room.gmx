@@ -10,7 +10,7 @@
   <persistent>0</persistent>
   <colour>14798451</colour>
   <showcolour>-1</showcolour>
-  <code>if(global.dialogue_status[0] == false) obj_player.state = states.cutscene;</code>
+  <code>if(global.cutscene_status[0] == false) obj_player.state = states.cutscene;</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
@@ -52,7 +52,7 @@
   </views>
   <instances>
     <instance objName="obj_PlayerStats" x="160" y="736" name="inst_A347F94B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_rm_dialogue" x="192" y="736" name="inst_6E31FC31" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_cut_0_Intro" x="192" y="736" name="inst_6E31FC31" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="0" y="736" name="inst_3E497867" locked="0" code="" scaleX="88" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="2816" y="704" name="inst_C9A7B995" locked="0" code="" scaleX="24" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_fence" x="576" y="736" name="inst_D98E7F10" locked="0" code="" scaleX="1.33333337306976" scaleY="1" colour="4294967295" rotation="0"/>
@@ -65,10 +65,10 @@
     <instance objName="obj_door" x="3168" y="704" name="inst_A83D3CF1" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_car" x="1927" y="691" name="inst_C11D6BB0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_Starting_Point" x="480" y="704" name="inst_2C4B2101" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_transitionarea" x="4032" y="0" name="inst_796D0CA6" locked="0" code="target_x = 128;&#xA;target_y = 640;&#xA;target_r = rm_stage1_section2;&#xA;" scaleX="1" scaleY="21" colour="4294967295" rotation="0"/>
+    <instance objName="obj_transitionarea" x="4032" y="0" name="inst_796D0CA6" locked="0" code="target_x = 128;&#xA;target_y = 640;&#xA;target_r = rm_stage1_2;&#xA;" scaleX="1" scaleY="21" colour="4294967295" rotation="0"/>
     <instance objName="obj_Starting_Point" x="3968" y="640" name="inst_1404D3F1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_lamppost" x="2077" y="896" name="inst_281C1313" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_lamppost" x="1629" y="896" name="inst_E574D265" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_lamppost" x="2064" y="736" name="inst_281C1313" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_lamppost" x="1616" y="736" name="inst_E574D265" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bg_neighborhood_old" x="96" y="704" w="32" h="32" xo="32" yo="64" id="10000972" name="inst_4C2920A9" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

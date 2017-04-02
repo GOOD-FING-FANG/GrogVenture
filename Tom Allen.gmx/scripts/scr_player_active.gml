@@ -90,9 +90,12 @@ else {
 
 // Moving right or left
 if ((!down && right) || (!down && left)) {
-    sprite_index = spr_tom_walk;
-    image_speed = .6;
-    object_set_mask(obj_player, spr_tom_mask)
+    if(place_meeting(x, y+1, obj_solid))
+    {
+        sprite_index = spr_tom_walk;
+        image_speed = .6;
+        object_set_mask(obj_player, spr_tom_mask)
+    }
     hspd += (right-left)*pAccel;
 
     // enforce speed limit

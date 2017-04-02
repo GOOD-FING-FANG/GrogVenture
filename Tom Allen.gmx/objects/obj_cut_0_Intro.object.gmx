@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>///Run the dialogue for the test room
 
-if(global.dialogue_status[0] == false)
+if(global.cutscene_status[0] == false)
 {
     //Set the player to the cutscene state
     obj_player.state = states.cutscene;
@@ -231,10 +231,10 @@ if(cutscene_complete)
     
     obj_player.state = states.active;
     
-    global.dialogue_status[0] = true;
+    global.cutscene_status[0] = true;
     obj_player.x = 1184;
     obj_player.y = 704;
-    room_goto(rm_level1);
+    room_goto(rm_stage1_1);
     
 }
 

@@ -56,11 +56,11 @@
     <instance objName="obj_door" x="2560" y="704" name="inst_4087E595" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_door" x="1920" y="704" name="inst_68C6D2DE" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_car" x="1068" y="659" name="inst_80820163" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_lamppost" x="957" y="864" name="inst_4929226A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_lamppost" x="1405" y="864" name="inst_8934FA6A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_lamppost" x="3133" y="864" name="inst_0B260473" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_lamppost" x="3580" y="864" name="inst_87690993" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_transitionarea" x="32" y="672" name="inst_E8B699AE" locked="0" code="target_x = 4000;&#xA;target_y = 640;&#xA;target_r = rm_level1;" scaleX="1" scaleY="-21" colour="4294967295" rotation="0"/>
+    <instance objName="obj_lamppost" x="944" y="704" name="inst_4929226A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_lamppost" x="1392" y="704" name="inst_8934FA6A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_lamppost" x="3120" y="704" name="inst_0B260473" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_lamppost" x="3567" y="704" name="inst_87690993" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_transitionarea" x="32" y="672" name="inst_E8B699AE" locked="0" code="target_x = 4000;&#xA;target_y = 640;&#xA;target_r = rm_stage1_1;&#xA;" scaleX="1" scaleY="-21" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="608" y="704" name="inst_84FA269C" locked="0" code="" scaleX="102" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="3872" y="704" name="inst_824A61F4" locked="0" code="" scaleX="7" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_PlayerStats" x="32" y="736" name="inst_EE4ACABC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

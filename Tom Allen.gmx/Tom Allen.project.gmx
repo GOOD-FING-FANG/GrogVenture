@@ -18,6 +18,11 @@
       <sprite>sprites\spr_tom_crouch_mask</sprite>
     </sprites>
     <sprites name="Room Sprites">
+      <sprites name="Neighborhood Things">
+        <sprite>sprites\spr_carplaceholder</sprite>
+        <sprite>sprites\spr_lampplaceholder</sprite>
+        <sprite>sprites\spr_smlamp</sprite>
+      </sprites>
       <sprite>sprites\spr_solid</sprite>
       <sprite>sprites\spr_block</sprite>
       <sprite>sprites\spr_house</sprite>
@@ -25,11 +30,6 @@
       <sprite>sprites\spr_door</sprite>
       <sprite>sprites\spr_solid_place</sprite>
       <sprite>sprites\spr_transitionarea</sprite>
-      <sprites name="Neighborhood Things">
-        <sprite>sprites\spr_carplaceholder</sprite>
-        <sprite>sprites\spr_lampplaceholder</sprite>
-        <sprite>sprites\spr_smlamp</sprite>
-      </sprites>
     </sprites>
     <sprites name="GUI">
       <sprite>sprites\spr_heartcontainer</sprite>
@@ -71,7 +71,6 @@
       <script>scripts\scr_player_attack.gml</script>
       <script>scripts\scr_player_cutscene.gml</script>
       <script>scripts\scr_player_damaged.gml</script>
-      <script>scripts\move_state.gml</script>
       <scripts name="Player Buffs">
         <script>scripts\scr_player_grog.gml</script>
         <script>scripts\scr_player_groggrog.gml</script>
@@ -93,6 +92,9 @@
         <script>scripts\saw_leash.gml</script>
       </scripts>
     </scripts>
+    <scripts name="Depreciated - Backup">
+      <script>scripts\move_state.gml</script>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_dialogue</font>
@@ -111,28 +113,31 @@
       <object>objects\obj_circularsaw</object>
     </objects>
     <objects name="Room Objects">
-      <object>objects\obj_block</object>
-      <object>objects\obj_solid</object>
-      <object>objects\obj_background</object>
-      <object>objects\obj_rm_dialogue</object>
-      <object>objects\obj_house</object>
-      <object>objects\obj_text</object>
-      <object>objects\obj_fence</object>
-      <object>objects\obj_door</object>
       <objects name="Neighborhood Level">
+        <object>objects\obj_fence</object>
+        <object>objects\obj_door</object>
         <object>objects\obj_car</object>
         <object>objects\obj_lamppost</object>
       </objects>
+      <object>objects\obj_solid</object>
       <object>objects\obj_transitionarea</object>
+      <object>objects\obj_background</object>
+      <object>objects\obj_block</object>
+      <object>objects\obj_house</object>
     </objects>
     <objects name="NPC Objects">
       <object>objects\obj_woodrow</object>
     </objects>
+    <objects name="Cutscene Objects">
+      <object>objects\obj_text</object>
+      <object>objects\obj_cut_0_Intro</object>
+      <object>objects\obj_cut_1_WoodChat</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\init</room>
-    <room>rooms\rm_level1</room>
-    <room>rooms\rm_stage1_section2</room>
+    <room>rooms\rm_stage1_1</room>
+    <room>rooms\rm_stage1_2</room>
     <room>rooms\rm_testroom</room>
   </rooms>
   <help>
