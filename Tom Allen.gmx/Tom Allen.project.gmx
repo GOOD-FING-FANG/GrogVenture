@@ -22,6 +22,10 @@
         <sprite>sprites\spr_carplaceholder</sprite>
         <sprite>sprites\spr_lampplaceholder</sprite>
         <sprite>sprites\spr_smlamp</sprite>
+        <sprite>sprites\spr_2stump</sprite>
+        <sprite>sprites\spr_3stump</sprite>
+        <sprite>sprites\spr_4stump</sprite>
+        <sprite>sprites\spr_5stump</sprite>
       </sprites>
       <sprite>sprites\spr_solid</sprite>
       <sprite>sprites\spr_block</sprite>
@@ -138,6 +142,7 @@
     <room>rooms\init</room>
     <room>rooms\rm_stage1_1</room>
     <room>rooms\rm_stage1_2</room>
+    <room>rooms\rm_stage1_3</room>
     <room>rooms\rm_testroom</room>
   </rooms>
   <help>

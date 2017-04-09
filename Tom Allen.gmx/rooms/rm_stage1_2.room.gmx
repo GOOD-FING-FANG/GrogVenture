@@ -60,11 +60,13 @@
     <instance objName="obj_lamppost" x="1392" y="704" name="inst_8934FA6A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_lamppost" x="3120" y="704" name="inst_0B260473" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_lamppost" x="3567" y="704" name="inst_87690993" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_transitionarea" x="32" y="672" name="inst_E8B699AE" locked="0" code="target_x = 4000;&#xA;target_y = 640;&#xA;target_r = rm_stage1_1;&#xA;" scaleX="1" scaleY="-21" colour="4294967295" rotation="0"/>
+    <instance objName="obj_transitionarea" x="32" y="672" name="inst_E8B699AE" locked="0" code="target_x = 4000;&#xA;target_y = 640;&#xA;target_r = rm_stage1_1;" scaleX="1" scaleY="-21" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="608" y="704" name="inst_84FA269C" locked="0" code="" scaleX="102" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="3872" y="704" name="inst_824A61F4" locked="0" code="" scaleX="7" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_PlayerStats" x="32" y="736" name="inst_EE4ACABC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_Starting_Point" x="128" y="640" name="inst_9956E8D5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_transitionarea" x="4032" y="0" name="inst_1CF1A5B9" locked="0" code="target_x = 96;&#xA;target_y = 672;&#xA;target_r = rm_stage1_3;" scaleX="1" scaleY="22" colour="4294967295" rotation="0"/>
+    <instance objName="obj_Starting_Point" x="3968" y="672" name="inst_05A84DAE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bg_neighborhood_old" x="224" y="608" w="32" h="32" xo="64" yo="32" id="10002033" name="inst_13B77D77" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
