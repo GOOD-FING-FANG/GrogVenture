@@ -16,7 +16,7 @@ if (instance_exists(obj_player)) {
     else vspd = 0;
 
     // Within aggro range
-    if (dis <= sight) {
+    if (dis <= (sight*1.5)) {
         if(awake == 0)
         {
             alarm[1] = 30;

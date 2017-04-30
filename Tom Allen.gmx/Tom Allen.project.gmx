@@ -22,10 +22,12 @@
         <sprite>sprites\spr_carplaceholder</sprite>
         <sprite>sprites\spr_lampplaceholder</sprite>
         <sprite>sprites\spr_smlamp</sprite>
+        <sprite>sprites\spr_1stump</sprite>
         <sprite>sprites\spr_2stump</sprite>
         <sprite>sprites\spr_3stump</sprite>
         <sprite>sprites\spr_4stump</sprite>
         <sprite>sprites\spr_5stump</sprite>
+        <sprite>sprites\spr_stumpsign</sprite>
       </sprites>
       <sprite>sprites\spr_solid</sprite>
       <sprite>sprites\spr_block</sprite>
@@ -122,6 +124,12 @@
         <object>objects\obj_door</object>
         <object>objects\obj_car</object>
         <object>objects\obj_lamppost</object>
+        <object>objects\obj_stumpsign</object>
+        <object>objects\obj_1stump</object>
+        <object>objects\obj_2stump</object>
+        <object>objects\obj_3stump</object>
+        <object>objects\obj_4stump</object>
+        <object>objects\obj_5stump</object>
       </objects>
       <object>objects\obj_solid</object>
       <object>objects\obj_transitionarea</object>
@@ -143,6 +151,7 @@
     <room>rooms\rm_stage1_1</room>
     <room>rooms\rm_stage1_2</room>
     <room>rooms\rm_stage1_3</room>
+    <room>rooms\rm_stage1_4</room>
     <room>rooms\rm_testroom</room>
   </rooms>
   <help>
