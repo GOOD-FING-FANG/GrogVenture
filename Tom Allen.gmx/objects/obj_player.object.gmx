@@ -28,7 +28,7 @@
             <string>/// Initialize the player object
 
 // Physics Variables
-pSpd = 5; //max speed
+pSpd = 7; //max speed
 pAccel = 5; //acceleration and friction coefficient
 hspd = 0; //current horizontal speed
 vspd = 0; //current vertical speed

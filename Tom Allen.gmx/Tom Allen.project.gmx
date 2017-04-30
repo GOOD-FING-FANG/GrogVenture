@@ -28,6 +28,7 @@
         <sprite>sprites\spr_4stump</sprite>
         <sprite>sprites\spr_5stump</sprite>
         <sprite>sprites\spr_stumpsign</sprite>
+        <sprite>sprites\spr_mcrooneytree</sprite>
       </sprites>
       <sprite>sprites\spr_solid</sprite>
       <sprite>sprites\spr_block</sprite>
@@ -148,11 +149,15 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\init</room>
-    <room>rooms\rm_stage1_1</room>
-    <room>rooms\rm_stage1_2</room>
-    <room>rooms\rm_stage1_3</room>
-    <room>rooms\rm_stage1_4</room>
     <room>rooms\rm_testroom</room>
+    <rooms name="Stage 1">
+      <room>rooms\rm_stage1_1</room>
+      <room>rooms\rm_stage1_2</room>
+      <room>rooms\rm_stage1_3</room>
+      <room>rooms\rm_stage1_4</room>
+      <room>rooms\rm_stage1_5</room>
+      <room>rooms\rm_stage1_boss</room>
+    </rooms>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
