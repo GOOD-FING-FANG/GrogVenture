@@ -102,12 +102,14 @@ draw_rectangle(x,y,x+boxwidth,y+boxheight,0);
 draw_set_color(c_black);
 draw_rectangle(x,y,x+boxwidth,y+boxheight,1);
 
+draw_sprite(portrait,(current_time/100)%2,x+padding+64,y+padding+64);
+
 draw_set_color(c_white);
 draw_set_halign(fa_left);
 draw_set_valign(fa_top);
 draw_text_ext
 (
-    x+padding,
+    x+padding*6,
     y+padding,
     print,
     font_size+(font_size/2),

@@ -9,6 +9,14 @@ with (txt)
     text = argument0;
     spd = argument1;
     font = fnt_dialogue;
+    if(argument2 == obj_player)
+    {
+        portrait = spr_tom_portrait;
+    }
+    else if(argument2 == obj_woodrow)
+    {
+        portrait = spr_woodrow_portrait;
+    }
     
     //text_length needed by obj_text to "type" text
     text_length = string_length(text);
@@ -21,8 +29,12 @@ with (txt)
     text_height = string_height_ext(text,font_size+(font_size/2),maxlength);
     
     //Determine the size of the box for the text
-    boxwidth = text_width+(padding*2);
+    boxwidth = text_width+(padding*8);
     boxheight = text_height+(padding*2);
+    if(boxheight < 64+padding*2)
+    {
+        boxheight = 64+padding*2;
+    }
     
     //Determine position for the text box to be located based on object position
     box_x = argument2.x - boxwidth/2;
