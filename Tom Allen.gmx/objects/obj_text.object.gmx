@@ -116,7 +116,10 @@ draw_text_ext
     maxlength
 );
 
-
+if(obj_text.done)
+{
+    draw_sprite_ext(spr_scroll_icon,0,x+boxwidth-4,y+boxheight,1,1,0,c_white,(current_time/500)%2);
+}
 
 draw_set_alpha(1);
 </string>

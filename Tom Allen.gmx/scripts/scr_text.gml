@@ -1,4 +1,4 @@
-///scr_text("Text",speed,obj_speaking)
+///scr_text("Text",obj_speaking,portrait,speed)
 
 //Initialize text box (see obj_text)
 txt = instance_create(0,0,obj_text);
@@ -7,16 +7,9 @@ with (txt)
     padding = 16; //Separation between edge of box and text
     maxlength = view_wview[0]/3; //Widest allowed box
     text = argument0;
-    spd = argument1;
+    portrait = argument2;
+    spd = argument3;
     font = fnt_dialogue;
-    if(argument2 == obj_player)
-    {
-        portrait = spr_tom_portrait;
-    }
-    else if(argument2 == obj_woodrow)
-    {
-        portrait = spr_woodrow_portrait;
-    }
     
     //text_length needed by obj_text to "type" text
     text_length = string_length(text);
@@ -37,8 +30,8 @@ with (txt)
     }
     
     //Determine position for the text box to be located based on object position
-    box_x = argument2.x - boxwidth/2;
-    box_y = argument2.y - (sprite_get_height(object_get_sprite(argument2))/2) - boxheight - (padding*2);
+    box_x = argument1.x - boxwidth/2;
+    box_y = argument1.y - (sprite_get_height(object_get_sprite(argument2))/2) - boxheight - (padding*2);
 
     //Check to see if box will be positioned offscreen and move if needed
     if(box_x < view_xview[0])

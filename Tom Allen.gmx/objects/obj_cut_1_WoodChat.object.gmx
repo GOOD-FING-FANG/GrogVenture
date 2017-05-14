@@ -46,8 +46,10 @@
     //Initialize an array for the dialogue in the cutscene
     dialogue[0,0] = "Find the juice, Tom!#It's up to you!";
     dialogue[0,1] = obj_woodrow;
+    dialogue[0,2] = spr_woodrow_portrait;
     dialogue[1,0] = "I'll find it, Woodrow,#if it's the last thing#I do! GROG GROG GROG!";
     dialogue[1,1] = obj_player;
+    dialogue[1,2] = spr_tom_portrait;
 
 //}
 //else
@@ -88,7 +90,7 @@ if(count == 0)
     //Wait for user to press (space) then open the first text box
     //if(space)
     //{       
-        scr_text(dialogue[count,0],spd,dialogue[count,1]);
+        scr_text(dialogue[count,0],dialogue[count,1],dialogue[count,2],spd);
         count++;
     //}
 }
@@ -106,7 +108,7 @@ else if(instance_exists(obj_text))
             //Check to confirm there is another text box to draw    
             if(array_height_2d(dialogue) &gt; count)
             {
-                scr_text(dialogue[count,0],spd,dialogue[count,1]);
+                scr_text(dialogue[count,0],dialogue[count,1],dialogue[count,2],spd);
                 count++;
                 
                 //If no more text boxes, flag dialogue as complete

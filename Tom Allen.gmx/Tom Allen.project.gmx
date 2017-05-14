@@ -42,6 +42,7 @@
       <sprite>sprites\spr_heartcontainer</sprite>
       <sprite>sprites\spr_tom_portrait</sprite>
       <sprite>sprites\spr_woodrow_portrait</sprite>
+      <sprite>sprites\spr_scroll_icon</sprite>
     </sprites>
     <sprites name="Enemy Sprites">
       <sprite>sprites\spr_bug</sprite>
