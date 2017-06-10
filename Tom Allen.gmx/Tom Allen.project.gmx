@@ -98,6 +98,8 @@
       <scripts name="Saw Scripts">
         <script>scripts\saw_idle.gml</script>
         <script>scripts\saw_move.gml</script>
+        <script>scripts\saw_spinup.gml</script>
+        <script>scripts\saw_broken.gml</script>
         <script>scripts\saw_leash.gml</script>
       </scripts>
     </scripts>

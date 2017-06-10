@@ -42,6 +42,11 @@ enum buffStates
 global.cutscene_status[0] = true; //Intro
 global.cutscene_status[1] = false; //Woodrow Neighborhood Chat
 
+//Warp to testing room
+//obj_player.x = 64;
+//obj_player.y = 704;
+//room_goto(rm_testroom);
+
 //Warp to first level
 obj_player.x = 480;
 obj_player.y = 704;

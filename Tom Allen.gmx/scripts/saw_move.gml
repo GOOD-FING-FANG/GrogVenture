@@ -1,5 +1,7 @@
-///spider_jump_state
+///saw_jump_state
 //image_index = image_number-1;
+var wall_left = place_meeting(bbox_left-1, bbox_bottom, obj_solid);
+var wall_right = place_meeting(bbox_right+1, bbox_bottom, obj_solid);
 
 // Apply gravity
 if (!place_meeting(x, bbox_bottom+1, obj_solid)) {
@@ -32,12 +34,17 @@ if (!place_meeting(x, bbox_bottom+1, obj_solid)) {
 // Move
 
 
-if (distance_to_object(obj_player) > sight) {
-    alarm[0] = 60;
-    states = saw_leash;
-}
-else
-{
+//if (distance_to_object(obj_player) > sight) {
+//    alarm[0] = 60;
+//    states = saw_leash;
+//}
+//else
+//{
+    hspd = image_xscale * chaseSpd;
     move(obj_solid);
-    wanderSteps = 0;
-}
+    if((wall_left || wall_right) && vspd == 0)
+    {
+        state = saw_broken;
+    }
+    //wanderSteps = 0;
+//}

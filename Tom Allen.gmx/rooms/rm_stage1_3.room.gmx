@@ -76,6 +76,8 @@
     <instance objName="obj_1stump" x="3424" y="672" name="inst_5149EE45" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_transitionarea" x="4032" y="0" name="inst_D7104C7D" locked="0" code="target_x = 96;&#xA;target_y = 640;&#xA;target_r = rm_stage1_4;" scaleX="1" scaleY="21" colour="4294967295" rotation="0"/>
     <instance objName="obj_Starting_Point" x="3968" y="640" name="inst_1997A596" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_circularsaw" x="1440" y="544" name="inst_A0B79DB7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_circularsaw" x="2464" y="608" name="inst_5875C80F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bg_neighborhood" x="0" y="704" w="32" h="32" xo="32" yo="128" id="10003331" name="inst_7183DCCE" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

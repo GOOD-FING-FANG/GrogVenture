@@ -29,21 +29,25 @@
 image_speed = 0;
 image_index = 0;
 
-sight = 128;
+sight = 160;
 
-initialx = x; //initial x position for patrol/leashing
+//initialx = x; //initial x position for patrol/leashing
 
-wanderRange = 50; //total wander range
+wanderRange = 48; //total wander range
 wanderSteps = 0; //wander steps taken
 wanderDir = 1; //wander direction (1= right, -1 = left)
-spd = 6;
+
+awake = 0; //whether the saw is spun up
+spinTimer = 0;
+idleSpd = 2;
 chaseSpd = 10;
+
 acc = 2;
 grav = 1;
 hspd = 0;
 vspd = 0;
 
-hp = 10;
+hp = 2;
 hit = 0;
 
 // Set the enemy's state

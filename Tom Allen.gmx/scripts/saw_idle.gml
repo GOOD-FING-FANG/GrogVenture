@@ -1,4 +1,4 @@
-///spider_idle_state
+///saw_idle_state
 var wall_left = place_meeting(bbox_left-1, bbox_bottom, obj_solid);
 var wall_right = place_meeting(bbox_right+1, bbox_bottom, obj_solid);
 var ledge_left = place_meeting(bbox_left-1, bbox_bottom+1, obj_solid);
@@ -16,14 +16,14 @@ if (instance_exists(obj_player)) {
     else vspd = 0;
 
     // Within aggro range
-    if (dis <= sight && alarm[0] <= 0) {
+    //if (dis <= sight && alarm[0] <= 0) {
+    if (dis <= sight && (obj_player.y <= y && obj_player.y+40 >= y)) {
         
-        
-        state = saw_move;
+        state = saw_spinup;
     }
     
     // Not within aggro range
-    else if (dis > sight) {
+    else /*if (dis > sight)*/ {
         
         
         if(wanderSteps < wanderRange && alarm[1] <= 0) {
@@ -36,9 +36,9 @@ if (instance_exists(obj_player)) {
                 image_xscale = wanderDir;
             }
 
-            hspd = 1 * wanderDir;
+            hspd = idleSpd * wanderDir;
             move(obj_solid);
-            wanderSteps++;
+            wanderSteps += idleSpd;
             
         }
         else if (wanderSteps == wanderRange) {
