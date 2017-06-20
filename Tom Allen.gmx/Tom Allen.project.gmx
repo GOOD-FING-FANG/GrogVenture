@@ -37,6 +37,7 @@
       <sprite>sprites\spr_door</sprite>
       <sprite>sprites\spr_solid_place</sprite>
       <sprite>sprites\spr_transitionarea</sprite>
+      <sprite>sprites\spr_woodrowshouse</sprite>
     </sprites>
     <sprites name="GUI">
       <sprite>sprites\spr_heartcontainer</sprite>
@@ -62,6 +63,7 @@
     <background>background\bg_wrench</background>
     <background>background\bg_neighborhood_old</background>
     <background>background\bg_neighborhood</background>
+    <background>background\bg_woodrows_house</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -152,6 +154,7 @@
     </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_woodrows_house</room>
     <room>rooms\init</room>
     <room>rooms\rm_testroom</room>
     <rooms name="Stage 1">
