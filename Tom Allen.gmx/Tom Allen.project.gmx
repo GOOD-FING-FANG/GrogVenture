@@ -16,6 +16,13 @@
       <sprite>sprites\spr_tom_mask</sprite>
       <sprite>sprites\spr_tom_crouch</sprite>
       <sprite>sprites\spr_tom_crouch_mask</sprite>
+      <sprites name="Old Low-Res Version">
+        <sprite>sprites\spr_tom_walk_old</sprite>
+        <sprite>sprites\spr_tom_jump_old</sprite>
+        <sprite>sprites\spr_tom_crouch_old</sprite>
+        <sprite>sprites\spr_tom_idle_old</sprite>
+        <sprite>sprites\spr_tom_crouch_mask_old</sprite>
+      </sprites>
     </sprites>
     <sprites name="Room Sprites">
       <sprites name="Neighborhood Things">
@@ -50,6 +57,7 @@
       <sprite>sprites\spr_juicystump</sprite>
       <sprite>sprites\spr_stump</sprite>
       <sprite>sprites\spr_circularsaw</sprite>
+      <sprite>sprites\spr_lawnmower</sprite>
     </sprites>
     <sprites name="Tools">
       <sprite>sprites\spr_sledge</sprite>
@@ -124,6 +132,7 @@
       <object>objects\obj_bug</object>
       <object>objects\obj_juicystump</object>
       <object>objects\obj_circularsaw</object>
+      <object>objects\obj_lawnmower</object>
     </objects>
     <objects name="Room Objects">
       <objects name="Neighborhood Level">
@@ -154,9 +163,9 @@
     </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\rm_woodrows_house</room>
     <room>rooms\init</room>
     <room>rooms\rm_testroom</room>
+    <room>rooms\rm_woodrows_house</room>
     <rooms name="Stage 1">
       <room>rooms\rm_stage1_1</room>
       <room>rooms\rm_stage1_2</room>
