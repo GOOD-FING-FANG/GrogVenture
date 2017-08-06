@@ -23,6 +23,14 @@
         <sprite>sprites\spr_tom_idle_old</sprite>
         <sprite>sprites\spr_tom_crouch_mask_old</sprite>
       </sprites>
+      <sprites name="big sprite backups">
+        <sprite>sprites\jump_bu</sprite>
+        <sprite>sprites\tom_walk_backup</sprite>
+        <sprite>sprites\mask_bu</sprite>
+        <sprite>sprites\crouch_bu</sprite>
+        <sprite>sprites\crouch_maskbu</sprite>
+        <sprite>sprites\idle_bu</sprite>
+      </sprites>
     </sprites>
     <sprites name="Room Sprites">
       <sprites name="Neighborhood Things">
