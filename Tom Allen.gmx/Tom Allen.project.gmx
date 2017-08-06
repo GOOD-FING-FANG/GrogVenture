@@ -62,6 +62,7 @@
     </sprites>
     <sprites name="Enemy Sprites">
       <sprite>sprites\spr_bug</sprite>
+      <sprite>sprites\spr_pallet</sprite>
       <sprite>sprites\spr_juicystump</sprite>
       <sprite>sprites\spr_stump</sprite>
       <sprite>sprites\spr_circularsaw</sprite>
@@ -120,8 +121,11 @@
         <script>scripts\saw_broken.gml</script>
         <script>scripts\saw_leash.gml</script>
       </scripts>
+      <scripts name="Pallet Scripts">
+        <script>scripts\pallet_Idle.gml</script>
+      </scripts>
     </scripts>
-    <scripts name="Depreciated - Backup">
+    <scripts name="Deprecated - Backup">
       <script>scripts\move_state.gml</script>
     </scripts>
     <scripts name="Boss Scripts">
@@ -144,6 +148,8 @@
     <objects name="Enemy Objects">
       <object>objects\obj_enemyParent</object>
       <object>objects\obj_bug</object>
+      <object>objects\obj_palletface</object>
+      <object>objects\obj_pallet</object>
       <object>objects\obj_juicystump</object>
       <object>objects\obj_circularsaw</object>
       <object>objects\obj_lawnmower</object>
