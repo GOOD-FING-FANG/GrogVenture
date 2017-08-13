@@ -29,29 +29,26 @@
 image_speed = 0;
 image_index = 0;
 
-sight = 160;
+attackDir = -1; //direction mower attacks toward (1= right, -1 = left)
 
-//initialx = x; //initial x position for patrol/leashing
+//number of times LM has turned. 
+//Used in phase 1 and 3. After 2 turns, burrow in wall
+turnTimes = 0;
 
-wanderRange = 48; //total wander range
-wanderSteps = 0; //wander steps taken
-wanderDir = 1; //wander direction (1= right, -1 = left)
-
-awake = 0; //whether the saw is spun up
-spinTimer = 0;
-idleSpd = 2;
-chaseSpd = 10;
+burrowing = 0; //whether mower is burrowing
+burrowTimer = 0;
+spd = 10;
 
 acc = 2;
 grav = 1;
 hspd = 0;
 vspd = 0;
 
-hp = 2;
+hp = 36;
 hit = 0;
 
 // Set the enemy's state
-state = saw_idle;
+state = scr_lm_phase_1;
 </string>
           </argument>
         </arguments>
@@ -171,8 +168,16 @@ event_inherited();
           <argument>
             <kind>1</kind>
             <string>/// Execute the state
-//if !instance_exists(obj_text) script_execute(state);
 
+//set lawnmower's phase: phase 1 @ 36 hp. phase 2 @ 24 hp. phase 3 @ 12 hp.
+if ((hp &lt;= 36 &amp;&amp; hp &gt; 24) &amp;&amp; turnTimes &lt; 2)
+    state = scr_lm_phase_1;
+//else if (hp &lt;= 24 &amp;&amp; hp &gt; 12)
+//    state = 2;
+//else if (hp &lt;= 12 &amp;&amp; hp &gt; 0)
+//    state = 3;
+//else
+//    state = 4; //(dead)
 
 if(hit == 1)
 {
@@ -187,38 +192,6 @@ if(alarm[2] == 0)
 }
 
 script_execute(state);
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="7" enumb="7">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Jump
-/*if (state == saw_idle) {
-    if (instance_exists(obj_player)) {
-        hspd = sign(obj_player.x-x)*spd;
-        vspd = -abs(hspd*2);
-    }
-    
-    horizontal_move_bounce(obj_solid);
-    state = saw_move;
-}*/
 </string>
           </argument>
         </arguments>

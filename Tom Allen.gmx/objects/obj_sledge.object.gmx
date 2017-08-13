@@ -81,7 +81,7 @@ y = obj_player.y-14;
     if(hit == 0)
     {
         alarm[2] = 60;
-        hp -= 4;
+        hp -= obj_player.sledgeDmg;
         hit = 1;
     }
     if(hp &lt;= 0) {

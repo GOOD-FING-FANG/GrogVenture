@@ -57,6 +57,10 @@ stage = 0;
 
 // Create the audio emitter
 audio_em = audio_emitter_create();
+
+//Initialize weapon damage
+hammerDmg = 2; //claw hammer
+sledgeDmg = 4; //sledgehammer
 </string>
           </argument>
         </arguments>

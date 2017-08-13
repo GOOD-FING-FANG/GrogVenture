@@ -124,6 +124,12 @@
     <scripts name="Depreciated - Backup">
       <script>scripts\move_state.gml</script>
     </scripts>
+    <scripts name="Boss Scripts">
+      <scripts name="Lawnmower">
+        <script>scripts\scr_lm_phase_1.gml</script>
+        <script>scripts\scr_lm_burrow.gml</script>
+      </scripts>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_dialogue</font>
